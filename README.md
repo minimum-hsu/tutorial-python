@@ -1,9 +1,6 @@
 # tutorial-python
 
-## Lesson 1
-
-Print
-
-## Lesson 2
-
-Function
+Lesson | Subject
+--- | ---
+01 | Print
+02 | Function
