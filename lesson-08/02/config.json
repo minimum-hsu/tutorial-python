@@ -1,0 +1,7 @@
+{
+    "version": 1,
+    "account": [
+        {"user": "Alice", "password": "password"},
+        {"user": "admin", "password": "admin"}
+    ]
+}
