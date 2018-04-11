@@ -8,5 +8,6 @@ Lesson | Subject
 04 | Loop
 05 | String Format
 06 | Exception
-07 | File
-08 | Parser
+07 | Class
+08 | File
+09 | Parser
