@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from animal import Animal
+import sys
 
 
 class Dog(Animal):
@@ -18,10 +19,12 @@ class Bird(Animal):
 
 if __name__ == '__main__':
     puppy = Dog(kind = 'Shiba', name = 'Maru')
-    eagle = Bird(kind = 'Sea Eagle', name = 'Andro')
-
     puppy.hello()
     puppy.run()
 
-    eagle.hello()
-    eagle.run() ## failed to run
+    try:
+        eagle = Bird(kind = 'Sea Eagle', name = 'Andro') ## failed to exec
+        eagle.hello()
+        eagle.run()
+    except TypeError as e:
+        print('[Error]', e, file = sys.stderr)

@@ -1,4 +1,8 @@
-class Animal():
+from abc import ABC, abstractmethod
+
+## see Abstract Base Classes (https://docs.python.org/3/library/abc.html)
+
+class Animal(ABC):
 
     def __init__(self, kind: str, name: str, legs: int):
         '''
@@ -12,6 +16,7 @@ class Animal():
     def hello(self):
         print('My name is {}. I am {}.'.format(self.name, self.__kind))
 
+    @abstractmethod
     def run(self):
-        print('no defined action')
+        pass
 
