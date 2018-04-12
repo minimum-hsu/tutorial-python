@@ -11,3 +11,5 @@ Lesson | Subject
 07 | Class
 08 | File
 09 | Parser
+10 | Logging
+11 | Command Line
