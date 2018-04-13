@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 if __name__ == '__main__':
     ## current time in local
     t = datetime.now()
-    print('Local time')
+    print('Current time')
     print(t.timetuple())
-    print('\nFormat time string')
-    print(t.strftime('%a %b %d, %Y'))
+
+    print('\n2 days ago')
+    t_2_day_ago = t + timedelta(days = -2)
+    print(t_2_day_ago.timetuple())
+
+    print('\n40 hours later')
+    t_40_hour_later = t + timedelta(hours = 40)
+    print(t_40_hour_later.timetuple())
 
