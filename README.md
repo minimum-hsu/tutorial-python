@@ -14,4 +14,5 @@ Lesson | Subject
 10 | Logging
 11 | Time
 12 | Testing
-13 | Command Line
+13 | Http Request and Response
+14 | Command Line
