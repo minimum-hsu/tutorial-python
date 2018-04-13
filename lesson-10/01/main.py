@@ -8,7 +8,7 @@ import logging
 #######################################
 logging.basicConfig(
     format = '%(asctime)s [%(levelname)s] %(message)s',
-    datefmt = '%Y/%m/%dT%H:%M:%S',
+    datefmt = '%Y-%m-%dT%H:%M:%S%z',
     level = logging.INFO
 )
 

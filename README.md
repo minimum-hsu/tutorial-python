@@ -12,4 +12,6 @@ Lesson | Subject
 08 | File
 09 | Parser
 10 | Logging
-11 | Command Line
+11 | Time
+12 | Testing
+13 | Command Line
