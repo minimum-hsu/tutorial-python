@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 
 
 if __name__ == '__main__':
-    ## current time in local
+    # current time in local
     t = datetime.now()
     print('Current time')
     print(t.timetuple())
@@ -16,4 +16,3 @@ if __name__ == '__main__':
     print('\n40 hours later')
     t_40_hour_later = t + timedelta(hours = 40)
     print(t_40_hour_later.timetuple())
-

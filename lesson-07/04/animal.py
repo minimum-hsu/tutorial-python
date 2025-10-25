@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-## see Abstract Base Classes (https://docs.python.org/3/library/abc.html)
+# see Abstract Base Classes (https://docs.python.org/3/library/abc.html)
 
 class Animal(ABC):
 
@@ -19,4 +19,3 @@ class Animal(ABC):
     @abstractmethod
     def run(self):
         pass
-

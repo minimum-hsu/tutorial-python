@@ -8,8 +8,8 @@ with open('config.json', 'r') as myfile:
     print(config)
 
     for index, account in enumerate(config['account']):
-        print('account', index) 
+        print('account', index)
         for key, value in account.items():
             print('{}: {}'.format(key, value))
 
-## you can re-run to see the property of dict
+# you can re-run to see the property of dict

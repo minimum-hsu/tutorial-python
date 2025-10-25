@@ -22,6 +22,5 @@ action = {
 
 
 if __name__ == '__main__':
-    index = randint(0, 2)  ## simulate user choice
+    index = randint(0, 2)  # simulate user choice
     action[index]()
-

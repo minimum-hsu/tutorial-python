@@ -4,7 +4,7 @@ from random import randint
 
 match = [1, 3]
 
-while True:  ## be careful, this loop is always run until break
+while True:  # be careful, this loop is always run until break
     number = randint(0, 10)
 
     if number in match:
@@ -12,4 +12,3 @@ while True:  ## be careful, this loop is always run until break
         break
     else:
         print(number, 'is not matched')
- 

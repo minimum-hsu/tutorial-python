@@ -14,9 +14,9 @@ class Dog(Animal):
 
 if __name__ == '__main__':
     try:
-        Animal.hello() ## failed to run
+        Animal.hello()  # failed to run
     except TypeError as e:
-        print('[Error]', e, file = sys.stderr)   
+        print('[Error]', e, file = sys.stderr)
     Animal.run()
 
     puppy = Dog(kind = 'Shiba', name = 'Maru')

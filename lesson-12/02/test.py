@@ -21,7 +21,7 @@ class NewsTestCase(unittest.TestCase):
 
         self.news_url = 'https://tw.appledaily.com/rss/newcreate/kind/rnews/type/106'
 
-        ## download news xml
+        # download news xml
         with request.urlopen(self.news_url) as rss:
             data = rss.read().decode('utf-8')
 
@@ -40,4 +40,3 @@ class NewsTestCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-        

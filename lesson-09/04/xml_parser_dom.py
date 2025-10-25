@@ -30,7 +30,7 @@ def parse_appledaily_news(file_: str):
         for n in node.childNodes:
             if n.nodeType in (root.TEXT_NODE, root.CDATA_SECTION_NODE):
                 return n.data
-    ## end of sub function
+    # end of sub function
 
     news = [parse_item(item) for item in items]
     return news
@@ -39,4 +39,3 @@ def parse_appledaily_news(file_: str):
 if __name__ == '__main__':
     news = parse_appledaily_news('news.xml')
     print(*news, sep = '\n')
-

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 def multiply(a: int, b: int) -> int:
-    """
+    '''
     Multiplies two integers.
 
     Args:
@@ -10,7 +10,7 @@ def multiply(a: int, b: int) -> int:
 
     Returns:
         int: The product of a and b.
-    """
+    '''
 
     return a * b
 

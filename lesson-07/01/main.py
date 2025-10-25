@@ -6,7 +6,7 @@ class Dog():
         The first step when creating a new object
         '''
 
-        ## Why is underscore used? see PEP 8 (https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles)
+        # Why is underscore used? see PEP 8 (https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles)
 
         self.__kind = kind
         self.name = name
@@ -24,4 +24,3 @@ if __name__ == '__main__':
 
     puppy.hello()
     puppy.run()
-

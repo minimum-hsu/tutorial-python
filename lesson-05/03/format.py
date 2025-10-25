@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-## see Format Specification Mini-Language (https://docs.python.org/3.6/library/string.html#format-specification-mini-language)
+# see Format Specification Mini-Language (https://docs.python.org/3.6/library/string.html#format-specification-mini-language)
 
 print('Fill space to format output: {:>10s}'.format('hello'))
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-## see Formatted string literals (https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
-## see PEP 498 (https://www.python.org/dev/peps/pep-0498/)
+# see Formatted string literals (https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
+# see PEP 498 (https://www.python.org/dev/peps/pep-0498/)
 
 var = 'hello'
 print(f'Fill space to format output: {var:>10}')

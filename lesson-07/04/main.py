@@ -23,7 +23,7 @@ if __name__ == '__main__':
     puppy.run()
 
     try:
-        eagle = Bird(kind = 'Sea Eagle', name = 'Andro') ## failed to exec
+        eagle = Bird(kind = 'Sea Eagle', name = 'Andro')  # failed to exec
         eagle.hello()
         eagle.run()
     except TypeError as e:

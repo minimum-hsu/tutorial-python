@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-## see printf-style String Formatting (https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting)
+# see printf-style String Formatting (https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting)
 
 print('Fill space to format output: %10s' % 'hello')
 
