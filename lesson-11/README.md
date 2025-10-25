@@ -211,23 +211,23 @@ dt_converted = dt_utc.astimezone(eastern)
 ```
 
 ### Common Format Codes
-| Code | Meaning | Example |
-|------|---------|---------|
-| `%Y` | 4-digit year | 2023 |
-| `%y` | 2-digit year | 23 |
-| `%m` | Month (01-12) | 12 |
-| `%B` | Full month name | December |
-| `%b` | Short month name | Dec |
-| `%d` | Day of month (01-31) | 25 |
-| `%A` | Full weekday name | Monday |
-| `%a` | Short weekday name | Mon |
-| `%H` | Hour (00-23) | 14 |
-| `%I` | Hour (01-12) | 02 |
-| `%M` | Minute (00-59) | 30 |
-| `%S` | Second (00-59) | 45 |
-| `%p` | AM/PM | PM |
-| `%z` | Timezone offset | +0200 |
-| `%Z` | Timezone name | EST |
+| Code | Meaning              | Example  |
+| ---- | -------------------- | -------- |
+| `%Y` | 4-digit year         | 2023     |
+| `%y` | 2-digit year         | 23       |
+| `%m` | Month (01-12)        | 12       |
+| `%B` | Full month name      | December |
+| `%b` | Short month name     | Dec      |
+| `%d` | Day of month (01-31) | 25       |
+| `%A` | Full weekday name    | Monday   |
+| `%a` | Short weekday name   | Mon      |
+| `%H` | Hour (00-23)         | 14       |
+| `%I` | Hour (01-12)         | 02       |
+| `%M` | Minute (00-59)       | 30       |
+| `%S` | Second (00-59)       | 45       |
+| `%p` | AM/PM                | PM       |
+| `%z` | Timezone offset      | +0200    |
+| `%Z` | Timezone name        | EST      |
 
 ## Practical Examples
 
