@@ -136,19 +136,18 @@ if __name__ == '__main__':
 Each example can be executed directly:
 
 ```bash
-# Navigate to lesson-03 directory
-cd lesson-03
-
-# Test if-else statements
-cd 01
+#Navigate to corresponding directory
+cd lesson-03/01
 python3 if_else.py
+```
 
-# Test dictionary-based switch-case
-cd ../02
+```bash
+cd lesson-03/02
 python3 switch_case.py
+```
 
-# Test match-case statement (requires Python 3.10+)
-cd ../03
+```bash
+cd lesson-03/03
 python3 match.py
 ```
 

@@ -20,7 +20,7 @@ Follow [Built-in Types](https://docs.python.org/3/library/stdtypes.html).
 | 02     | Function                  |
 | 03     | Condition                 |
 | 04     | Loop                      |
-| 05     | String Format             |
+| 05     | String                    |
 | 06     | Exception                 |
 | 07     | Class                     |
 | 08     | File                      |

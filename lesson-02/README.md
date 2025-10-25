@@ -11,6 +11,7 @@ This lesson covers Python functions, modules, and the concept of the main entry 
 - Learn about type hints and type checking
 - Master argument unpacking techniques
 - Understand lambda functions
+- Learn to document functions with docstrings
 
 ## Course Content
 
@@ -155,9 +156,21 @@ def hi(greeting, /, name, *, title):
 - Reference: [Python Glossary - Parameter](https://docs.python.org/3/glossary.html#term-parameter)
 
 ### 05. Type Hints and Type Checking
-**Files:** `05/typecheck.py`, `05/assert.py`
+**Files:** `05/typehint.py`, `05/typecheck.py`, `05/assert.py`
 
 Learn about type hints and runtime type checking:
+
+**Basic Type Hints (`05/typehint.py`)**
+```python
+#!/usr/bin/env python3
+
+def multiply(a: int, b: int) -> int:
+    return a * b
+
+if __name__ == '__main__':
+    result = multiply(3, 4)
+    print('3 multiplied by 4 is', result)
+```
 
 **Type Checking with Ignoring Warnings (`05/typecheck.py`)**
 ```python
@@ -192,7 +205,8 @@ if __name__ == '__main__':
 ```
 
 **Key Concepts:**
-- Type hints with `:` syntax
+- Type hints with `:` syntax for parameters
+- Return type annotations with `->` syntax
 - Runtime vs static type checking
 - `isinstance()` for runtime type validation
 - `assert` statement for runtime type enforcement
@@ -249,46 +263,91 @@ if __name__ == '__main__':
 - Assignment of lambda functions to variables
 - Use cases for lambda functions
 
+### 08. Documentation Strings (Docstrings)
+**File:** `08/docstring.py`
+
+Learn about documenting functions with docstrings:
+
+```python
+#!/usr/bin/env python3
+
+def multiply(a: int, b: int) -> int:
+    """
+    Multiplies two integers.
+
+    Args:
+        a (int): Multiplicand integer.
+        b (int): Multiplier integer.
+
+    Returns:
+        int: The product of a and b.
+    """
+    return a * b
+
+if __name__ == '__main__':
+    result = multiply(3, 4)
+    print(multiply.__doc__)  # Access the docstring
+```
+
+**Key Concepts:**
+- Triple-quoted strings for multi-line documentation
+- Google-style docstring format
+- `Args:` section for parameter documentation
+- `Returns:` section for return value documentation
+- `__doc__` attribute to access docstrings
+- Self-documenting code practices
+- Integration with documentation generators (Sphinx, etc.)
+
 ## How to Run
 
 Each example can be executed directly:
 
 ```bash
-# Navigate to lesson-02 directory
-cd lesson-02
-
-# Test main entry point
-cd 01
+# Navigate to corresponding directory
+cd lesson-02/01
 python3 main.py
 python3 no_main.py
+```
 
-# Test modules and imports
-cd ../02
+```bash
+cd lesson-02/02
 python3 main.py
 python3 second.py
+```
 
-# Test functions
-cd ../03
+```bash
+cd lesson-02/03
 python3 function.py
+```
 
-# Test parameters
-cd ../04
+```bash
+cd lesson-02/04
 python3 parameter.py
 python3 arbitrary.py
 python3 positional_and_keyword.py
+```
 
-# Test type checking
-cd ../05
+```bash
+cd lesson-02/05
+python3 typehint.py
 python3 typecheck.py
+# assert.py will raise an AssertionError at runtime
 python3 assert.py
+```
 
-# Test unpacking
-cd ../06
+```bash
+cd lesson-02/06
 python3 unpack.py
+```
 
-# Test lambda functions
-cd ../07
+```bash
+cd lesson-02/07
 python3 lambda.py
+```
+
+```bash
+cd lesson-02/08
+python3 docstring.py
 ```
 
 ## Practice Suggestions
@@ -298,6 +357,7 @@ python3 lambda.py
 3. **Type Hints**: Add type hints to your functions and use a type checker like mypy
 4. **Unpacking Practice**: Practice unpacking different data structures as function arguments
 5. **Lambda Usage**: Convert simple functions to lambda expressions and vice versa
+6. **Documentation Practice**: Write comprehensive docstrings for all your functions following Google or NumPy style
 
 ## Related Resources
 

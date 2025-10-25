@@ -4,4 +4,3 @@ names = ['Alice', 'Bob', 'John']
 
 for name in names:
     print(name)
-
