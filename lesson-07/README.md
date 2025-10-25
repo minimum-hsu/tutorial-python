@@ -1,6 +1,27 @@
-# Lesson 07 - Python Object-Oriented Programming (OOP)
+# Lesson 07 - Python Object-Oriented Programming (OOP)  <!-- omit in toc -->
 
 This lesson covers object-oriented programming concepts in Python, including classes, inheritance, abstract classes, method overriding, and property decorators.
+
+<!-- TOC -->
+- [Learning Objectives](#learning-objectives)
+- [Course Content](#course-content)
+  - [01. Basic Class Definition](#01-basic-class-definition)
+  - [02. Inheritance and Method Overriding](#02-inheritance-and-method-overriding)
+  - [03. Class Methods and Instance Methods](#03-class-methods-and-instance-methods)
+  - [04. Abstract Base Classes](#04-abstract-base-classes)
+  - [05. Complete Abstract Implementation](#05-complete-abstract-implementation)
+  - [06. Property Decorators](#06-property-decorators)
+- [OOP Design Patterns](#oop-design-patterns)
+  - [Complete Property Pattern](#complete-property-pattern)
+  - [Multiple Inheritance](#multiple-inheritance)
+- [How to Run](#how-to-run)
+- [Best Practices](#best-practices)
+  - [1. **Class Design**](#1-class-design)
+  - [2. **Inheritance Hierarchy**](#2-inheritance-hierarchy)
+  - [3. **Encapsulation**](#3-encapsulation)
+- [Practice Suggestions](#practice-suggestions)
+- [Related Resources](#related-resources)
+<!-- /TOC -->
 
 ## Learning Objectives
 

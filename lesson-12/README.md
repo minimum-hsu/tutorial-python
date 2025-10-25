@@ -1,6 +1,19 @@
-# Lesson 12 - Unit Testing in Python
+# Lesson 12 - Unit Testing in Python  <!-- omit in toc -->
 
 This lesson covers comprehensive unit testing in Python using both unittest (built-in) and pytest (third-party) frameworks, from basic test cases to advanced testing patterns.
+
+ <!-- TOC -->
+ - [Learning Objectives](#learning-objectives)
+ - [Course Content](#course-content)
+   - [01. If-Else Statements](#01-if-else-statements)
+   - [02. Switch-Case Alternative (Dictionary Dispatch)](#02-switch-case-alternative-dictionary-dispatch)
+   - [03. Match-Case Statement (Python 3.10+)](#03-match-case-statement-python-310)
+ - [Comparison of Approaches](#comparison-of-approaches)
+ - [How to Run](#how-to-run)
+ - [Practice Suggestions](#practice-suggestions)
+ - [Advanced Topics to Explore](#advanced-topics-to-explore)
+ - [Related Resources](#related-resources)
+ <!-- /TOC -->
 
 ## Learning Objectives
 

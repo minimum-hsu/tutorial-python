@@ -1,6 +1,19 @@
-# Lesson 03 - Python Control Flow: Conditional Statements
+# Lesson 03 - Python Control Flow: Conditional Statements  <!-- omit in toc -->
 
 This lesson covers Python's conditional statements, including if-else statements, switch-case alternatives, and the modern match-case statement.
+
+<!-- TOC -->
+- [Learning Objectives](#learning-objectives)
+- [Course Content](#course-content)
+  - [01. If-Else Statements](#01-if-else-statements)
+  - [02. Switch-Case Alternative (Dictionary Dispatch)](#02-switch-case-alternative-dictionary-dispatch)
+  - [03. Match-Case Statement (Python 3.10+)](#03-match-case-statement-python-310)
+- [Comparison of Approaches](#comparison-of-approaches)
+- [How to Run](#how-to-run)
+- [Practice Suggestions](#practice-suggestions)
+- [Advanced Topics to Explore](#advanced-topics-to-explore)
+- [Related Resources](#related-resources)
+<!-- /TOC -->
 
 ## Learning Objectives
 

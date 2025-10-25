@@ -1,6 +1,28 @@
-# Lesson 09 - Python Data Format Parsing
+# Lesson 09 - Python Data Format Parsing  <!-- omit in toc -->
 
 This lesson covers parsing various data formats commonly used in software development, including configuration files, structured data formats, and markup languages.
+
+<!-- TOC -->
+- [Learning Objectives](#learning-objectives)
+- [Course Content](#course-content)
+  - [01. INI Configuration Files](#01-ini-configuration-files)
+  - [02. JSON Data Processing](#02-json-data-processing)
+  - [03. HTML Parsing](#03-html-parsing)
+  - [04. XML Parsing](#04-xml-parsing)
+  - [05. CSV Data Processing](#05-csv-data-processing)
+  - [06. YAML Configuration](#06-yaml-configuration)
+  - [07. TOML Configuration](#07-toml-configuration)
+- [Format Comparison](#format-comparison)
+- [How to Run](#how-to-run)
+- [Best Practices](#best-practices)
+  - [1. **Choose the Right Parser**](#1-choose-the-right-parser)
+  - [2. **Handle Encoding Properly**](#2-handle-encoding-properly)
+  - [3. **Error Handling**](#3-error-handling)
+  - [4. **Security Considerations**](#4-security-considerations)
+- [Practice Suggestions](#practice-suggestions)
+- [Advanced Topics](#advanced-topics)
+- [Related Resources](#related-resources)
+<!-- /TOC -->
 
 ## Learning Objectives
 

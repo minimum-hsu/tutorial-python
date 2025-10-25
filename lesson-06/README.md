@@ -1,6 +1,27 @@
-# Lesson 06 - Python Exception Handling
+# Lesson 06 - Python Exception Handling  <!-- omit in toc -->
 
 This lesson covers Python exception handling, including throwing exceptions, catching them with try-except blocks, custom exceptions, and modern exception groups.
+
+<!-- TOC -->
+- [Learning Objectives](#learning-objectives)
+- [Course Content](#course-content)
+  - [01. Throwing Exceptions](#01-throwing-exceptions)
+  - [02. Exception Handling](#02-exception-handling)
+  - [03. Exception Groups (Python 3.11+)](#03-exception-groups-python-311)
+- [Exception Handling Patterns](#exception-handling-patterns)
+  - [Basic Exception Handling](#basic-exception-handling)
+  - [Multiple Exception Types](#multiple-exception-types)
+  - [Exception Chaining](#exception-chaining)
+- [How to Run](#how-to-run)
+- [Best Practices](#best-practices)
+  - [1. **Specific Exception Handling**](#1-specific-exception-handling)
+  - [2. **Proper Exception Messages**](#2-proper-exception-messages)
+  - [3. **Resource Cleanup**](#3-resource-cleanup)
+  - [4. **Custom Exception Hierarchy**](#4-custom-exception-hierarchy)
+- [Practice Suggestions](#practice-suggestions)
+- [Common Exception Types](#common-exception-types)
+- [Related Resources](#related-resources)
+<!-- /TOC -->
 
 ## Learning Objectives
 

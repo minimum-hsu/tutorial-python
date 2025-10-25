@@ -1,6 +1,21 @@
-# Lesson 04 - Python Loops and Iteration
+# Lesson 04 - Python Loops and Iteration  <!-- omit in toc -->
 
 This lesson covers Python's loop structures, including for loops, while loops, loop control statements, and list comprehensions for efficient iteration and data processing.
+
+<!-- TOC -->
+- [Learning Objectives](#learning-objectives)
+- [Course Content](#course-content)
+  - [01. For Loops](#01-for-loops)
+  - [02. While Loops](#02-while-loops)
+  - [03. Loop Control Statements](#03-loop-control-statements)
+  - [04. List Comprehensions](#04-list-comprehensions)
+- [Loop Comparison](#loop-comparison)
+- [How to Run](#how-to-run)
+- [Practice Suggestions](#practice-suggestions)
+- [Performance Tips](#performance-tips)
+- [Advanced Topics to Explore](#advanced-topics-to-explore)
+- [Related Resources](#related-resources)
+<!-- /TOC -->
 
 ## Learning Objectives
 

@@ -1,6 +1,24 @@
-# Lesson 02 - Python Functions and Modules
+# Lesson 02 - Python Functions and Modules  <!-- omit in toc -->
 
 This lesson covers Python functions, modules, and the concept of the main entry point, including parameter handling, type hints, and lambda functions.
+
+<!-- TOC -->
+- [Learning Objectives](#learning-objectives)
+- [Course Content](#course-content)
+  - [01. Main Entry Point](#01-main-entry-point)
+  - [02. Modules and Imports](#02-modules-and-imports)
+  - [03. Basic Functions](#03-basic-functions)
+  - [04. Function Parameters](#04-function-parameters)
+  - [05. Type Hints and Type Checking](#05-type-hints-and-type-checking)
+  - [06. Argument Unpacking](#06-argument-unpacking)
+  - [07. Lambda Functions](#07-lambda-functions)
+  - [08. Documentation Strings (Docstrings)](#08-documentation-strings-docstrings)
+  - [09. Inner Functions (Nested Functions)](#09-inner-functions-nested-functions)
+  - [10. Functional Programming with pandas](#10-functional-programming-with-pandas)
+- [How to Run](#how-to-run)
+- [Practice Suggestions](#practice-suggestions)
+- [Related Resources](#related-resources)
+<!-- /TOC -->
 
 ## Learning Objectives
 

@@ -1,6 +1,42 @@
-# Lesson 11 - Date and Time Handling
+# Lesson 11 - Date and Time Handling  <!-- omit in toc -->
 
 This lesson covers comprehensive date and time operations in Python, from basic datetime usage to advanced parsing with external libraries.
+
+<!-- TOC -->
+- [Learning Objectives](#learning-objectives)
+- [Course Content](#course-content)
+  - [01. Basic DateTime Operations](#01-basic-datetime-operations)
+  - [02. Time String Parsing and Timezone Conversion](#02-time-string-parsing-and-timezone-conversion)
+  - [03. Date Arithmetic with Timedelta](#03-date-arithmetic-with-timedelta)
+  - [04. Custom Date Formatting](#04-custom-date-formatting)
+  - [05. Advanced Parsing with python-dateutil](#05-advanced-parsing-with-python-dateutil)
+- [DateTime Components Deep Dive](#datetime-components-deep-dive)
+  - [Date and Time Creation](#date-and-time-creation)
+  - [Timezone Handling](#timezone-handling)
+  - [Common Format Codes](#common-format-codes)
+- [Practical Examples](#practical-examples)
+  - [Date Range Generation](#date-range-generation)
+  - [Age Calculation](#age-calculation)
+  - [Working Days Calculator](#working-days-calculator)
+  - [Time Zone Converter](#time-zone-converter)
+- [How to Run](#how-to-run)
+- [Best Practices](#best-practices)
+  - [1. **Always Use Timezone-Aware Datetimes**](#1-always-use-timezone-aware-datetimes)
+  - [2. **Use UTC for Storage and Calculations**](#2-use-utc-for-storage-and-calculations)
+  - [3. **Validate Date Inputs**](#3-validate-date-inputs)
+  - [4. **Use dateutil for Flexible Parsing**](#4-use-dateutil-for-flexible-parsing)
+  - [5. **Handle Daylight Saving Time**](#5-handle-daylight-saving-time)
+- [Common Datetime Operations](#common-datetime-operations)
+  - [String to DateTime Conversion](#string-to-datetime-conversion)
+  - [DateTime to String Conversion](#datetime-to-string-conversion)
+  - [Time Calculations](#time-calculations)
+- [Advanced Topics](#advanced-topics)
+  - [Custom DateTime Classes](#custom-datetime-classes)
+  - [Performance Considerations](#performance-considerations)
+- [Practice Suggestions](#practice-suggestions)
+- [Common Pitfalls](#common-pitfalls)
+- [Related Resources](#related-resources)
+<!-- /TOC -->
 
 ## Learning Objectives
 

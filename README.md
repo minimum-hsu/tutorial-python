@@ -1,8 +1,14 @@
-# Tutorial Python
+# Tutorial Python  <!-- omit in toc -->
 
 A collection of Python tutorials for beginners.
 
 Python version: 3.12+
+
+<!-- TOC -->
+- [Coding Style](#coding-style)
+- [Data Types](#data-types)
+- [Lessons](#lessons)
+<!-- /TOC -->
 
 ## Coding Style
 

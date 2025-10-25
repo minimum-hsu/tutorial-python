@@ -1,6 +1,25 @@
-# Lesson 05 - Python String Formatting and Manipulation
+# Lesson 05 - Python String Formatting and Manipulation  <!-- omit in toc -->
 
 This lesson covers various string formatting techniques in Python, from basic concatenation to modern f-strings and template strings, along with string manipulation methods.
+
+<!-- TOC -->
+- [Learning Objectives](#learning-objectives)
+- [Course Content](#course-content)
+  - [01. String Concatenation](#01-string-concatenation)
+  - [02. Printf-Style Formatting](#02-printf-style-formatting)
+  - [03. Format Method](#03-format-method)
+  - [04. F-Strings (Formatted String Literals)](#04-f-strings-formatted-string-literals)
+  - [05. String Joining](#05-string-joining)
+  - [06. String Comparison](#06-string-comparison)
+  - [07. Case Manipulation](#07-case-manipulation)
+  - [08. Template Strings (Python 3.14+)](#08-template-strings-python-314)
+- [String Formatting Comparison](#string-formatting-comparison)
+- [How to Run](#how-to-run)
+- [Practice Suggestions](#practice-suggestions)
+- [Performance Considerations](#performance-considerations)
+- [Best Practices](#best-practices)
+- [Related Resources](#related-resources)
+<!-- /TOC -->
 
 ## Learning Objectives
 

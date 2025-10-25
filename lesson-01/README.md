@@ -1,6 +1,18 @@
-# Lesson 01 - Python Basic Output and print Function
+# Lesson 01 - Python Basic Output and print Function  <!-- omit in toc -->
 
 This lesson introduces the most fundamental output operations in Python, including various uses of the `print()` function and output control techniques.
+
+<!-- TOC -->
+- [Learning Objectives](#learning-objectives)
+- [Course Content](#course-content)
+  - [01. Hello World - Basic Output](#01-hello-world---basic-output)
+  - [02. Escape Characters](#02-escape-characters)
+  - [03. Standard Error Output](#03-standard-error-output)
+  - [04. List Unpacking](#04-list-unpacking)
+- [How to Run](#how-to-run)
+- [Practice Suggestions](#practice-suggestions)
+- [Related Resources](#related-resources)
+<!-- /TOC -->
 
 ## Learning Objectives
 

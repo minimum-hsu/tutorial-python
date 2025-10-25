@@ -1,6 +1,35 @@
-# Lesson 10 - Python Logging
+# Lesson 10 - Python Logging  <!-- omit in toc -->
 
 This lesson covers Python's logging system, from basic console logging to advanced configuration-based logging with file rotation and multiple handlers.
+
+<!-- TOC -->
+- [Learning Objectives](#learning-objectives)
+- [Course Content](#course-content)
+  - [01. Basic Logging](#01-basic-logging)
+  - [02. Advanced Configuration-Based Logging](#02-advanced-configuration-based-logging)
+- [Logging Components](#logging-components)
+  - [Log Levels (in order of severity)](#log-levels-in-order-of-severity)
+  - [Handlers](#handlers)
+  - [Formatters](#formatters)
+- [Logging Configuration Patterns](#logging-configuration-patterns)
+  - [Basic Console Logging](#basic-console-logging)
+  - [File Logging with Rotation](#file-logging-with-rotation)
+  - [Multi-Handler Setup](#multi-handler-setup)
+- [How to Run](#how-to-run)
+- [Best Practices](#best-practices)
+  - [1. **Use Appropriate Log Levels**](#1-use-appropriate-log-levels)
+  - [2. **Use Logger Hierarchy**](#2-use-logger-hierarchy)
+  - [3. **Lazy String Formatting**](#3-lazy-string-formatting)
+  - [4. **Structured Configuration**](#4-structured-configuration)
+  - [5. **Exception Logging**](#5-exception-logging)
+- [Advanced Topics](#advanced-topics)
+  - [Time-Based Log Rotation](#time-based-log-rotation)
+  - [Custom Formatter](#custom-formatter)
+  - [Context Managers for Logging](#context-managers-for-logging)
+- [Practice Suggestions](#practice-suggestions)
+- [Common Pitfalls](#common-pitfalls)
+- [Related Resources](#related-resources)
+<!-- /TOC -->
 
 ## Learning Objectives
 

@@ -1,6 +1,30 @@
-# Lesson 08 - Python File I/O Operations
+# Lesson 08 - Python File I/O Operations  <!-- omit in toc -->
 
 This lesson covers file input/output operations in Python, including reading files, writing files, and working with temporary files for safe file operations.
+
+<!-- TOC -->
+- [Learning Objectives](#learning-objectives)
+- [Course Content](#course-content)
+  - [01. File Reading Operations](#01-file-reading-operations)
+  - [02. File Writing Operations](#02-file-writing-operations)
+  - [03. Temporary File Operations](#03-temporary-file-operations)
+  - [04. File and Directory Management](#04-file-and-directory-management)
+- [File Operation Patterns](#file-operation-patterns)
+  - [Safe File Reading Pattern](#safe-file-reading-pattern)
+  - [Append to File Pattern](#append-to-file-pattern)
+  - [Binary File Operations](#binary-file-operations)
+  - [File Processing with Error Handling](#file-processing-with-error-handling)
+- [File Mode Reference](#file-mode-reference)
+- [How to Run](#how-to-run)
+- [Best Practices](#best-practices)
+  - [1. **Always Use Context Managers**](#1-always-use-context-managers)
+  - [2. **Handle Encoding Explicitly**](#2-handle-encoding-explicitly)
+  - [3. **Use pathlib for Path Operations**](#3-use-pathlib-for-path-operations)
+  - [4. **Use Temporary Files for Safe Operations**](#4-use-temporary-files-for-safe-operations)
+- [Practice Suggestions](#practice-suggestions)
+- [Common Pitfalls](#common-pitfalls)
+- [Related Resources](#related-resources)
+<!-- /TOC -->
 
 ## Learning Objectives
 
