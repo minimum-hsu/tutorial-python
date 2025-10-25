@@ -8,6 +8,6 @@ print('Fill zeros to format output: {:04d}'.format(12))
 
 print('{} have {} dollars'.format('I', 12))
 
-print('{user} has {money} dollars'.format(user = 'Alice', money = 12))
+print('{user} has {money} dollars'.format(user='Alice', money=12))
 
 print('Reorder output: {0}. {2}, {1}'.format('Alice', 'Bob', 'Charlie'))

@@ -2,5 +2,4 @@
 
 import sys
 
-print('error', file = sys.stderr)
-
+print('error', file=sys.stderr)

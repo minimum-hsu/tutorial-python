@@ -5,4 +5,4 @@ print('hello world')
 print('hello', 'world')
 
 # use "sep" parameter to change output
-print('hello', 'world', sep = '_')
+print('hello', 'world', sep='_')

@@ -15,15 +15,15 @@ class Bird(Animal):
         super().__init__(kind, name, 2)
 
 if __name__ == '__main__':
-    puppy = Dog(kind = 'Shiba', name = 'Maru')
+    puppy = Dog(kind='Shiba', name='Maru')
     puppy.hello()
     puppy.run()
 
     try:
         # failed to exec
         # Animal.run() is abstract method, need Bird to implement it
-        eagle = Bird(kind = 'Sea Eagle', name = 'Andro')
+        eagle = Bird(kind='Sea Eagle', name='Andro')
         eagle.hello()
         eagle.run()
     except TypeError as e:
-        print('[Error]', e, file = sys.stderr)
+        print('[Error]', e, file=sys.stderr)

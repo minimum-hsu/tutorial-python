@@ -13,7 +13,7 @@ if __name__ == '__main__':
         throw_exception()
     except IndexError as err:
         # not executed in this case
-        print('[Error]', err, file = sys.stderr)
+        print('[Error]', err, file=sys.stderr)
     else:
         print('no exception launched')
     finally:

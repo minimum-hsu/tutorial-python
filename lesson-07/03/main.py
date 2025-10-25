@@ -23,12 +23,12 @@ if __name__ == '__main__':
         # hello() is instance method, need instance to call
         Animal.hello()
     except TypeError as e:
-        print('[Error]', e, file = sys.stderr)
+        print('[Error]', e, file=sys.stderr)
 
     # correct way to call class method
     Animal.info()
     Dog.info()
 
-    puppy = Dog(kind = 'Shiba', name = 'Maru')
+    puppy = Dog(kind='Shiba', name='Maru')
     puppy.hello()
     puppy.run()

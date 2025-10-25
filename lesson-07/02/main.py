@@ -17,7 +17,7 @@ class Dog(Animal):
         print('I am {}.'.format(self.__kind))  # __kind is private attribute of Animal
 
 if __name__ == '__main__':
-    puppy = Dog(kind = 'Shiba', name = 'Maru')
+    puppy = Dog(kind='Shiba', name='Maru')
 
     puppy.hello()
     puppy.run()
@@ -26,4 +26,4 @@ if __name__ == '__main__':
         # failed to access private attribute
         puppy.echo_kind()
     except AttributeError as e:
-        print('[Error]', e, file = sys.stderr)
+        print('[Error]', e, file=sys.stderr)

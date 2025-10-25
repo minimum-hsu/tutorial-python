@@ -8,4 +8,4 @@ print('hello\nworld')
 print('hello\tpython')
 
 # vertical tab
-print('hello world', end = '\v')
+print('hello world', end='\v')

@@ -17,10 +17,10 @@ class Bird(Animal):
         print('I can jump by {} legs'.format(self.legs))
 
 if __name__ == '__main__':
-    puppy = Dog(kind = 'Shiba', name = 'Maru')
+    puppy = Dog(kind='Shiba', name='Maru')
     puppy.hello()
     puppy.run()
 
-    eagle = Bird(kind = 'Sea Eagle', name = 'Andro')
+    eagle = Bird(kind='Sea Eagle', name='Andro')
     eagle.hello()
     eagle.run()
