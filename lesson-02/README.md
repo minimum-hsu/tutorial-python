@@ -12,6 +12,8 @@ This lesson covers Python functions, modules, and the concept of the main entry 
 - Master argument unpacking techniques
 - Understand lambda functions
 - Learn to document functions with docstrings
+- Master inner functions and closures
+- Understand functional programming concepts
 
 ## Course Content
 
@@ -298,6 +300,145 @@ if __name__ == '__main__':
 - Self-documenting code practices
 - Integration with documentation generators (Sphinx, etc.)
 
+### 09. Inner Functions (Nested Functions)
+**File:** `09/inner.py`
+
+Learn about defining functions inside other functions:
+
+```python
+#!/usr/bin/env python3
+
+def format_text(text: str) -> str:
+    """
+    Format the input text by trimming whitespace and converting to lowercase.
+
+    Args:
+        text (str): The input text to format.
+
+    Returns:
+        str: The formatted text.
+    """
+
+    def trim(s: str) -> str:
+        """
+        The inner function to trim whitespace from both ends of the string.
+        """
+        return s.strip()
+
+    def to_lower(s: str) -> str:
+        """
+        The inner function to convert the string to lowercase.
+        """
+        return s.lower()
+
+    return to_lower(trim(text))
+
+if __name__ == '__main__':
+    sample = "   Hello World!   "
+    formatted = format_text(sample)
+    print(f"Original: '{sample}'")
+    print(f"Formatted: '{formatted}'")
+```
+
+**Key Concepts:**
+- Inner functions are defined inside other functions
+- Inner functions have access to outer function's variables (closure)
+- Inner functions are only accessible within the outer function
+- Useful for code organization and encapsulation
+- Can be used to create specialized helper functions
+- Support for functional programming patterns
+
+### 10. Functional Programming with pandas
+**Files:** `10/funtional_programming.py`, `10/requirements.txt`
+
+Learn functional programming concepts using pandas DataFrame operations:
+
+**Requirements (`10/requirements.txt`)**
+```pip-requirements
+pandas
+```
+
+**Functional Programming Example (`10/funtional_programming.py`)**
+```python
+#!/usr/bin/env python3
+
+from pandas import DataFrame
+
+def create_example() -> DataFrame:
+    """
+    Create a simple pandas DataFrame as an example.
+
+    Returns:
+        DataFrame: A pandas DataFrame with sample data.
+    """
+    data = {
+        'Name': ['Alice', 'Bob', 'Charlie'],
+        'Age': [25, 30, 35],
+        'City': ['New York', 'Los Angeles', 'Chicago']
+    }
+    return DataFrame(data)
+
+def filter_age(df, min_age) -> DataFrame:
+    '''
+    Filter rows where Age is greater than min_age.
+
+    Args:
+        df (DataFrame): The input DataFrame.
+        min_age (int): The minimum age to filter by.
+
+    Returns:
+        DataFrame: Filtered DataFrame.
+    '''
+    return df[df['Age'] > min_age]
+
+def uppercase_city(df) -> DataFrame:
+    '''
+    Convert the 'City' column to uppercase.
+
+    Args:
+        df (DataFrame): The input DataFrame.
+
+    Returns:
+        DataFrame: DataFrame with 'City' column in uppercase.
+    '''
+    _df = df.copy()
+    _df['City'] = _df['City'].apply(lambda city: city.upper())
+    return _df
+
+def add_age_flag(df) -> DataFrame:
+    '''
+    Add a new column 'Age > 30' indicating if Age is greater than 30.
+
+    Args:
+        df (DataFrame): The input DataFrame.
+
+    Returns:
+        DataFrame: DataFrame with new 'Age > 30' column.
+    '''
+    _df = df.copy()
+    _df['Age > 30'] = _df['Age'].apply(lambda age: age > 30)
+    return _df
+
+if __name__ == '__main__':
+    df = create_example()
+
+    # Using pipe to chain functions
+    result = df.pipe(filter_age, min_age=30) \
+               .pipe(uppercase_city) \
+               .pipe(add_age_flag)
+    print(result)
+```
+
+**Key Concepts:**
+- Functional programming principles with data processing
+- Pure functions that don't modify input data
+- Function chaining with `.pipe()` method
+- `lambda` functions for simple transformations
+- `DataFrame.apply()` for element-wise operations
+- `DataFrame.copy()` for avoiding side effects
+- Method chaining for readable data pipelines
+- External dependencies management with `requirements.txt`
+
 ## How to Run
 
 Each example can be executed directly:
@@ -350,6 +491,18 @@ cd lesson-02/08
 python3 docstring.py
 ```
 
+```bash
+cd lesson-02/09
+python3 inner.py
+```
+
+```bash
+cd lesson-02/10
+# Install dependencies first
+pip install -r requirements.txt
+python3 funtional_programming.py
+```
+
 ## Practice Suggestions
 
 1. **Module Experiments**: Try importing the modules in different ways and observe the `__name__` variable
@@ -358,6 +511,8 @@ python3 docstring.py
 4. **Unpacking Practice**: Practice unpacking different data structures as function arguments
 5. **Lambda Usage**: Convert simple functions to lambda expressions and vice versa
 6. **Documentation Practice**: Write comprehensive docstrings for all your functions following Google or NumPy style
+7. **Inner Functions**: Create functions with multiple inner functions for complex data processing
+8. **Functional Programming**: Practice chaining operations and creating pure functions with data processing libraries
 
 ## Related Resources
 
