@@ -23,7 +23,9 @@ if __name__ == '__main__':
     puppy.run()
 
     try:
-        eagle = Bird(kind = 'Sea Eagle', name = 'Andro')  # failed to exec
+        # failed to exec
+        # Animal.run() is abstract method, need Bird to implement it
+        eagle = Bird(kind = 'Sea Eagle', name = 'Andro')
         eagle.hello()
         eagle.run()
     except TypeError as e:

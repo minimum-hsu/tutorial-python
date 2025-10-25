@@ -18,4 +18,4 @@ class Animal(ABC):
 
     @abstractmethod
     def run(self):
-        pass
+        raise NotImplementedError('Subclasses must implement abstract method')

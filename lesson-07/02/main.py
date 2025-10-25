@@ -2,6 +2,7 @@
 
 from animal import Animal
 import sys
+from typing import override
 
 
 class Dog(Animal):
@@ -9,11 +10,12 @@ class Dog(Animal):
         # see super method (https://docs.python.org/2/library/functions.html#super)
         super().__init__(kind, name, 4)
 
+    @override  # optional, but good practice to indicate overriding method
     def run(self):
         print('I can run by {} legs'.format(self.legs))
 
     def echo_kind(self):
-        print('I am {}.'.format(self.__kind))  # __kind is private variable of Animal class
+        print('I am {}.'.format(self.__kind))  # __kind is private attribute of Animal
 
 
 if __name__ == '__main__':
@@ -21,7 +23,9 @@ if __name__ == '__main__':
 
     puppy.hello()
     puppy.run()
+
     try:
-        puppy.echo_kind()  # failed to exec
+        # failed to access private attribute
+        puppy.echo_kind()
     except AttributeError as e:
         print('[Error]', e, file = sys.stderr)
