@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+from contextlib import suppress
+
 def throw_exception():
     names = ['Alice', 'Bob', 'Charlie']
 
@@ -7,6 +9,6 @@ def throw_exception():
         print(names[i])
 
 if __name__ == '__main__':
-    throw_exception()
-    # This will raise:
-    # IndexError: list index out of range
+    # Suppress IndexError exceptions
+    with suppress(IndexError):
+        throw_exception()

@@ -14,6 +14,7 @@ if __name__ == '__main__':
     except IndexError as err:
         print('[Error]', err, file = sys.stderr)
     else:
+        # not executed in this case
         print('no exception launched')
     finally:
         print('finally block is always executed')

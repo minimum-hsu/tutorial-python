@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
-def throw_custom_exception():
-    raise Exception('This is an exception')
+def throw_exception():
+    raise Exception('Custom exception')
 
 if __name__ == '__main__':
-    throw_custom_exception()
+    throw_exception()
+    # This will raise:
+    # Exception: Custom exception
