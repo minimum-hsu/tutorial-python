@@ -1,12 +1,8 @@
 #!/usr/bin/env python3
 
-import sys
-
-assert sys.version_info >= (3, 5)
-
 from pathlib import Path
 
-
-myfile = Path('fruit.txt')
-content = myfile.read_text()
+workdir = Path(__file__).parent
+file = workdir / 'fruit.txt'
+content = file.read_text()
 print(content)
