@@ -28,5 +28,9 @@ Follow [Built-in Types](https://docs.python.org/3/library/stdtypes.html).
 | 10     | Logging                   |
 | 11     | DateTime                  |
 | 12     | Testing                   |
-| 13     | Http Request and Response |
+| 13     | Module and Package        |
 | 14     | Command Line              |
+| 15     | Http Request and Response |
+| 16     | Modeling                  |
+| 17     | Database                  |
+| 18     | Processes and Threading   |

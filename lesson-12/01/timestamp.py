@@ -1,6 +1,5 @@
 from datetime import datetime
 
-
 def parse_timestamp(t):
     try:
         return datetime.strptime(
@@ -97,7 +96,7 @@ def parse_timestamp(t):
         ).utctimetuple()
     except:
         pass
-    
+
     try:
         return datetime.strptime(
             t,
@@ -107,4 +106,3 @@ def parse_timestamp(t):
         pass
 
     return None
-
