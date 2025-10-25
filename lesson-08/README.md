@@ -10,6 +10,7 @@ This lesson covers file input/output operations in Python, including reading fil
 - Learn to work with temporary files and directories
 - Understand file path handling with pathlib
 - Master safe file operations and cleanup
+- Learn file and directory management operations
 
 ## Course Content
 
@@ -172,6 +173,50 @@ if __name__ == '__main__':
 - `'w+'` mode for read/write operations
 - Automatic cleanup vs manual cleanup considerations
 
+### 04. File and Directory Management
+**File:** `04/remove.py`
+
+Learn advanced file and directory management operations:
+
+```python
+#!/usr/bin/env python3
+
+from pathlib import Path
+import shutil
+from tempfile import TemporaryDirectory
+
+def prepare_files(dir: str):
+    tempfolder = Path(dir)
+    (tempfolder / 'file1.txt').touch()  # Create empty file
+    (tempfolder / 'folder2').mkdir()    # Create directory
+    (tempfolder / 'folder2' / "file2.txt").touch()  # Create nested file
+
+def list_files(dir: str):
+    tempfolder = Path(dir)
+    for path in tempfolder.rglob('*'):  # Recursive glob
+        print(path)
+
+def remove_files(dir: str):
+    shutil.rmtree(dir)  # Remove directory tree
+
+if __name__ == '__main__':
+    with TemporaryDirectory() as myfolder:
+        print('temp folder is', myfolder)
+        prepare_files(myfolder)
+        list_files(myfolder)
+        remove_files(myfolder)
+
+    print('folder is removed after closed')
+```
+
+**Key Concepts:**
+- `Path.touch()` creates empty files
+- `Path.mkdir()` creates directories
+- `Path.rglob('*')` for recursive directory traversal
+- `shutil.rmtree()` for removing directory trees
+- Nested path operations with `/` operator
+- File and directory creation patterns
+
 ## File Operation Patterns
 
 ### Safe File Reading Pattern
@@ -265,6 +310,11 @@ python3 temp.py
 python3 tempfile_directed_output.py
 ```
 
+```bash
+cd lesson-08/04
+python3 remove.py
+```
+
 ## Best Practices
 
 ### 1. **Always Use Context Managers**
@@ -343,6 +393,11 @@ def safe_file_update(original_path, new_content):
    - Implement safe file editing operations
    - Create temporary data processing pipelines
    - Build caching systems with temporary storage
+
+5. **File and Directory Management**:
+   - Create directory structure builders
+   - Implement file organization and cleanup tools
+   - Build recursive file processing utilities
 
 ## Common Pitfalls
 
