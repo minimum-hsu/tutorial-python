@@ -18,40 +18,6 @@ This lesson covers file input/output operations in Python, including reading fil
 
 Learn different approaches to reading file content:
 
-**Sample Data File (`01/fruit.txt`)**
-```plaintext
-apple
-apricot
-avocado
-banana
-berry
-cantaloupe
-cherry
-citron
-citrus
-coconut
-date
-fig
-grape
-guava
-kiwi
-lemon
-lime
-mango
-melon
-nectarine
-orange
-papaya
-peach
-pear
-pineapple
-plum
-prune
-raisin
-raspberry
-tangerine
-```
-
 **Read Entire File (`01/reader_all.py`)**
 ```python
 #!/usr/bin/env python3
