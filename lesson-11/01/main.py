@@ -1,11 +1,7 @@
 #!/usr/bin/env python3
 
 from datetime import datetime
-import time
-import sys
-
-assert sys.version_info >= (3, 6)
-
+from datetime import timezone
 
 if __name__ == '__main__':
     # current time in local
@@ -15,7 +11,7 @@ if __name__ == '__main__':
     print(t)
 
     # current time in UTC
-    utc = datetime.utcnow()
+    utc = datetime.now(timezone.utc)
     print('\nUTC time')
     print(utc.timetuple())  # same as t.utctimetuple()
     print(utc)

@@ -2,7 +2,6 @@
 
 from datetime import datetime
 
-
 if __name__ == '__main__':
     # parse time string
     time_string = '2017/01/23 12:30:40+0200'

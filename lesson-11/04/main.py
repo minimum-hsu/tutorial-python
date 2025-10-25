@@ -2,7 +2,6 @@
 
 from datetime import datetime
 
-
 if __name__ == '__main__':
     # current time in local
     t = datetime.now()

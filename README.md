@@ -1,4 +1,4 @@
-# tutorial-python
+# Tutorial Python
 
 A collection of Python tutorials for beginners.
 
@@ -26,7 +26,7 @@ Follow [Built-in Types](https://docs.python.org/3/library/stdtypes.html).
 | 08     | File                      |
 | 09     | Parser                    |
 | 10     | Logging                   |
-| 11     | Time                      |
+| 11     | DateTime                  |
 | 12     | Testing                   |
 | 13     | Http Request and Response |
 | 14     | Command Line              |
