@@ -155,15 +155,15 @@ def hi(greeting, /, name, *, title):
 - Reference: [Python Glossary - Parameter](https://docs.python.org/3/glossary.html#term-parameter)
 
 ### 05. Type Hints and Type Checking
-**File:** `05/typecheck.py`
+**Files:** `05/typecheck.py`, `05/assert.py`
 
 Learn about type hints and runtime type checking:
 
+**Type Checking with Ignoring Warnings (`05/typecheck.py`)**
 ```python
 #!/usr/bin/env python3
 
 def hello(name: str):
-    assert isinstance(name, str)
     print('hello', name)
 
 if __name__ == '__main__':
@@ -176,11 +176,28 @@ if __name__ == '__main__':
     hello(['Charlie'])  # type: ignore
 ```
 
+**Runtime Assertion Checking (`05/assert.py`)**
+```python
+#!/usr/bin/env python3
+
+def hello(name: str):
+    assert isinstance(name, str)
+    print('hello', name)
+
+if __name__ == '__main__':
+    hello('Alice')
+
+    # This will raise an AssertionError when the type is incorrect
+    hello(['Bob'])
+```
+
 **Key Concepts:**
 - Type hints with `:` syntax
 - Runtime vs static type checking
 - `isinstance()` for runtime type validation
-- `# type: ignore` comment for suppressing warnings
+- `assert` statement for runtime type enforcement
+- `# type: ignore` comment for suppressing type checker warnings
+- AssertionError when type validation fails
 - Reference: [PEP 484 - Type Hints](https://www.python.org/dev/peps/pep-0484/)
 
 ### 06. Argument Unpacking
@@ -263,6 +280,7 @@ python3 positional_and_keyword.py
 # Test type checking
 cd ../05
 python3 typecheck.py
+python3 assert.py
 
 # Test unpacking
 cd ../06
