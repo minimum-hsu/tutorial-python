@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
 from json import load
+from pathlib import Path
 
-
-with open('config.json', 'r') as myfile:
+workdir = Path(__file__).parent
+with open(workdir / 'config.json', 'r') as myfile:
     config = load(myfile)
     print(config)
 

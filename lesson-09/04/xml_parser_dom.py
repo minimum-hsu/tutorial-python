@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
+from pathlib import Path
 from xml.dom.minidom import parse
-
 
 def parse_appledaily_news(file_: str):
     dom = parse(file_)
@@ -35,7 +35,7 @@ def parse_appledaily_news(file_: str):
     news = [parse_item(item) for item in items]
     return news
 
-
 if __name__ == '__main__':
-    news = parse_appledaily_news('news.xml')
+    workdir = Path(__file__).parent
+    news = parse_appledaily_news(str(workdir / 'news.xml'))
     print(*news, sep = '\n')

@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 
-import sys
 from html.parser import HTMLParser
 from html.entities import name2codepoint
 from pathlib import Path
-
 
 class MyHTMLParser(HTMLParser):
     __in_tbody = False
@@ -21,7 +19,7 @@ class MyHTMLParser(HTMLParser):
             self.__in_td_th = True
 
         for attr in attrs:
-            if 'print_hide' in attr[1]:
+            if attr[1] and 'print_hide' in attr[1]:
                 self.__print = True
 
     def handle_endtag(self, tag):
@@ -52,12 +50,9 @@ class MyHTMLParser(HTMLParser):
             c = chr(int(name))
         print("Num ent  :", c)
 
-
-assert sys.version_info >= (3, 5)
-
-
 if __name__ == '__main__':
-    myfile = Path('rate.html')
+    workdir = Path(__file__).parent
+    myfile = workdir / 'rate.html'
     content = myfile.read_text()
 
     parser = MyHTMLParser()

@@ -1,0 +1,73 @@
+[build-system]
+requires = [
+    "hatchling",
+    "versioningit",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "demo"
+description = "demo package"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Unix",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows :: Windows 11",
+]
+dependencies = [
+    "jmespath>=1.0.1, <2",
+    "pydantic>=2.11.9, <3"
+]
+dynamic = [
+    "version"
+]
+
+[project.license]
+text = "MIT"
+
+[[project.authors]]
+name = "Author Name"
+email = "user@example.com"
+
+[project.urls]
+Homepage = "https://example.com/homepage"
+Registry = "https://example.com/registry"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-env"
+]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/demo"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/demo"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.version]
+source = "versioningit"
+
+[tool.versioningit.vcs]
+method = "git"
+default-tag = "0.0.0"
+
+[tool.pytest.ini_options]
+log_cli = false
+log_cli_level = "INFO"
+minversion = "8.4"
+required_plugins = [
+    "pytest-env"
+]
+pythonpath = ["src"]
+testpaths = ["tests"]

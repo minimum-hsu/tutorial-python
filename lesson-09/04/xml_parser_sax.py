@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from pathlib import Path
 from xml.sax import parse, ContentHandler
 
 class AppleDailyNewsHandler(ContentHandler):
@@ -22,7 +23,6 @@ class AppleDailyNewsHandler(ContentHandler):
         elif self.__current_path.endswith('.item.link'):
             self.__link = data
 
-
 if __name__ == '__main__':
-    parse('news.xml', AppleDailyNewsHandler())
-
+    workdir = Path(__file__).parent
+    parse(workdir / 'news.xml', AppleDailyNewsHandler())
