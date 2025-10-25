@@ -20,23 +20,23 @@ Follow [Built-in Types](https://docs.python.org/3/library/stdtypes.html).
 
 ## Lessons
 
-| Lesson | Subject                   |
-| ------ | ------------------------- |
-| 01     | Print                     |
-| 02     | Function                  |
-| 03     | Condition                 |
-| 04     | Loop                      |
-| 05     | String                    |
-| 06     | Exception                 |
-| 07     | Class                     |
-| 08     | File                      |
-| 09     | Parser                    |
-| 10     | Logging                   |
-| 11     | DateTime                  |
-| 12     | Testing                   |
-| 13     | Module and Package        |
-| 14     | Command Line              |
-| 15     | Http Request and Response |
-| 16     | Modeling                  |
-| 17     | Database                  |
-| 18     | Processes and Threading   |
+| Lesson | Subject                 |
+| ------ | ----------------------- |
+| 01     | Print                   |
+| 02     | Function                |
+| 03     | Condition               |
+| 04     | Loop                    |
+| 05     | String                  |
+| 06     | Exception               |
+| 07     | Class                   |
+| 08     | File                    |
+| 09     | Parser                  |
+| 10     | Logging                 |
+| 11     | DateTime                |
+| 12     | Testing                 |
+| 13     | Module and Package      |
+| 14     | Command Line            |
+| 15     | Http Client             |
+| 16     | Modeling                |
+| 17     | Database                |
+| 18     | Processes and Threading |
