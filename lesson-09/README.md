@@ -20,17 +20,6 @@ This lesson covers parsing various data formats commonly used in software develo
 
 Learn to parse INI configuration files using Python's built-in configparser:
 
-**Sample INI File (`01/config.ini`)**
-```ini
-[default]
-user=Alice
-password=password
-
-[admin]
-user=admin
-password=admin
-```
-
 **INI Parser (`01/ini_parser.py`)**
 ```python
 #!/usr/bin/env python3
@@ -59,17 +48,6 @@ for section in config.sections():
 **Files:** `02/config.json`, `02/json_parser.py`
 
 Learn to parse JSON data format for structured data exchange:
-
-**Sample JSON File (`02/config.json`)**
-```json
-{
-    "version": 1,
-    "account": [
-        {"user": "Alice", "password": "password"},
-        {"user": "admin", "password": "admin"}
-    ]
-}
-```
 
 **JSON Parser (`02/json_parser.py`)**
 ```python
