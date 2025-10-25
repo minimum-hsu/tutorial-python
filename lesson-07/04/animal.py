@@ -1,4 +1,5 @@
-from abc import ABC, abstractmethod
+from abc import ABC
+from abc import abstractmethod
 
 # see Abstract Base Classes (https://docs.python.org/3/library/abc.html)
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-from animal import Animal
 import sys
 from typing import override
+from animal import Animal
 
 class Dog(Animal):
     def __init__(self, kind: str, name: str):
@@ -16,7 +16,6 @@ class Dog(Animal):
     @classmethod
     def info(cls):
         print('This is Dog class.')
-
 
 if __name__ == '__main__':
     try:

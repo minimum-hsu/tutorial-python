@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 
-from animal import Animal
 import sys
 from typing import override
-
+from animal import Animal
 
 class Dog(Animal):
     def __init__(self, kind: str, name: str):
@@ -16,7 +15,6 @@ class Dog(Animal):
 
     def echo_kind(self):
         print('I am {}.'.format(self.__kind))  # __kind is private attribute of Animal
-
 
 if __name__ == '__main__':
     puppy = Dog(kind = 'Shiba', name = 'Maru')
