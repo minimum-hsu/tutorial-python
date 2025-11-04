@@ -1,6 +1,6 @@
-# Get Startted
+# Get Started
 
-This lesson guides you through setting up and running the command-line interface (CLI) application for the `animal` package, which includes a `dog` command that allows users to create and interact with dog objects.
+This lesson guides you through setting up and running the command-line interface (CLI) application for the `animal` package, which includes a `dog` command that allows users to create and interact with dog objects. The CLI tool is built using the `docopt` command-line interface library, which simplifies the creation of complex and user-friendly command-line applications.
 
 ```bash
 # Install pytest if you haven't already

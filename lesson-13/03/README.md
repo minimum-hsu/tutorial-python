@@ -1,4 +1,4 @@
-# Get Startted
+# Get Started
 
 This lesson demonstrates how to structure a Python project using packages and modules, and how to write unit tests for your code.
 

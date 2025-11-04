@@ -1,4 +1,4 @@
-# Get Startted for ORM and MySQL
+# Get Started for ORM and MySQL
 
 This lesson will guide you through setting up an Object-Relational Mapping (ORM) tool to interact with a MySQL database in Python. We will use SQLAlchemy as our ORM of choice.
 

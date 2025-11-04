@@ -1,6 +1,6 @@
 # Lesson 14 - Command Line Argument Processing  <!-- omit in toc -->
 
-This lesson covers comprehensive command-line argument processing in Python using both argparse (built-in) and docopt (third-party) libraries, from basic argument parsing to professional CLI application development and distribution.
+This lesson covers comprehensive command-line argument processing in Python using argparse (built-in), docopt (declarative), and Click (modern) frameworks, from basic argument parsing to professional CLI application development and distribution.
 
 <!-- TOC -->
 - [Learning Objectives](#learning-objectives)
@@ -8,6 +8,7 @@ This lesson covers comprehensive command-line argument processing in Python usin
   - [01. argparse - Built-in Argument Parsing](#01-argparse---built-in-argument-parsing)
   - [02. docopt - Declarative Argument Parsing](#02-docopt---declarative-argument-parsing)
   - [03. Packaged CLI Tool with Entry Points](#03-packaged-cli-tool-with-entry-points)
+  - [04. Modern CLI with Click Framework](#04-modern-cli-with-click-framework)
 - [Argument Types and Patterns](#argument-types-and-patterns)
   - [argparse Argument Types](#argparse-argument-types)
     - [Basic Argument Types](#basic-argument-types)
@@ -22,6 +23,7 @@ This lesson covers comprehensive command-line argument processing in Python usin
   - [Basic argparse Example](#basic-argparse-example)
   - [docopt Example](#docopt-example)
   - [Packaged CLI Tool Example](#packaged-cli-tool-example)
+  - [Modern CLI with Click Framework Example](#modern-cli-with-click-framework-example)
 - [Advanced CLI Patterns](#advanced-cli-patterns)
   - [Subcommands with argparse](#subcommands-with-argparse)
   - [Configuration File Integration](#configuration-file-integration)
@@ -33,10 +35,11 @@ This lesson covers comprehensive command-line argument processing in Python usin
   - [4. **Use Argument Groups for Organization**](#4-use-argument-groups-for-organization)
   - [5. **Provide Examples and Epilog**](#5-provide-examples-and-epilog)
 - [Library Comparison](#library-comparison)
-  - [argparse vs docopt](#argparse-vs-docopt)
+  - [Framework Comparison](#framework-comparison)
   - [When to Use Each](#when-to-use-each)
     - [Choose argparse when:](#choose-argparse-when)
     - [Choose docopt when:](#choose-docopt-when)
+    - [Choose Click when:](#choose-click-when)
 - [Common CLI Patterns](#common-cli-patterns)
   - [Progress Indicators](#progress-indicators)
   - [Logging Integration](#logging-integration)
@@ -49,13 +52,15 @@ This lesson covers comprehensive command-line argument processing in Python usin
 
 - Master Python's built-in argparse module
 - Learn docopt for declarative argument parsing
+- Explore modern CLI development with Click framework
 - Create distributable CLI tools with entry points
 - Understand different types of command-line arguments
-- Create professional command-line interfaces
+- Create professional command-line interfaces with rich formatting
 - Handle argument validation and error messages
 - Build user-friendly help systems
 - Design maintainable and installable CLI applications
 - Package CLI tools for distribution
+- Compare different CLI frameworks and choose the right tool
 
 ## Course Content
 
@@ -244,6 +249,70 @@ if __name__ == '__main__':
 - Integration of CLI and library functionality
 - Installation creates system-wide commands
 - Version management and testing integration
+
+### 04. Modern CLI with Click Framework
+**Files:** `04/src/animal/cli.py`, `04/pyproject.toml`, `04/README.md`
+
+Learn to create modern, user-friendly CLI applications using the Click framework with rich formatting:
+
+**CLI Module (`04/src/animal/cli.py`)**
+```python
+#!/usr/bin/env python3
+
+import rich_click as click
+from animal.mammalia import Dog
+
+@click.group()
+def cli():
+    pass
+
+@cli.command()
+@click.option('--name', required=True, help='Name of the dog.')
+@click.option('--kind', required=True, help='Kind/Breed of the dog.')
+def dog(name: str, kind: str):
+    instance = Dog(name=name, kind=kind)
+    instance.hello()
+    instance.run()
+
+if __name__ == '__main__':
+    cli()
+```
+
+**Package Configuration (`04/pyproject.toml`)**
+```toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "animal"
+description = "A simple animal package"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.3.0, <9",
+    "rich-click>=1.9.4, <2",
+]
+dynamic = ["version"]
+
+[project.scripts]
+animal = "animal.cli:cli"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/animal"]
+```
+
+**Key Concepts:**
+- Click decorators for command definition (`@click.group()`, `@cli.command()`)
+- Rich-click for enhanced formatting and styling
+- Type hints for better code clarity
+- Required options with `required=True`
+- Modern dependency management with version constraints
+- Group-based command organization
+- Professional package metadata and classifiers
 
 ## Argument Types and Patterns
 
@@ -531,6 +600,32 @@ python3 -m build
 # The 'animal' command is now available system-wide after installation
 ```
 
+### Modern CLI with Click Framework Example
+```bash
+cd lesson-14/04
+
+# Install requirements for development
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Install the package in development mode
+pip install -e .[dev]
+
+# Run the installed CLI command with rich formatting
+animal dog --name="Maru" --kind="Shiba"
+
+# Or run tests
+pytest
+
+# The CLI will display enhanced help with rich formatting
+animal dog --help
+
+# Build the package for distribution
+python3 -m build
+
+# The 'animal' command is now available system-wide with rich formatting
+```
+
 ## Advanced CLI Patterns
 
 ### Subcommands with argparse
@@ -726,27 +821,31 @@ Examples:
 
 ## Library Comparison
 
-### argparse vs docopt
+### Framework Comparison
 
-| Feature | argparse | docopt |
-|---------|----------|--------|
-| **Learning Curve** | Moderate | Easy |
-| **Code Verbosity** | Verbose | Concise |
-| **Flexibility** | High | Medium |
-| **Validation** | Built-in | Manual |
-| **Help Generation** | Automatic | From docstring |
-| **Subcommands** | Native support | Manual parsing |
-| **Dependencies** | Built-in | Third-party |
-| **Performance** | Fast | Slower |
+| Feature | argparse | docopt | Click |
+|---------|----------|--------|-------|
+| **Learning Curve** | Moderate | Easy | Easy |
+| **Code Verbosity** | Verbose | Concise | Moderate |
+| **Flexibility** | High | Medium | High |
+| **Validation** | Built-in | Manual | Built-in |
+| **Help Generation** | Automatic | From docstring | Automatic + Rich |
+| **Subcommands** | Native support | Manual parsing | Native + Groups |
+| **Dependencies** | Built-in | Third-party | Third-party |
+| **Performance** | Fast | Slower | Fast |
+| **Type Hints** | Manual | None | Native support |
+| **Rich Formatting** | Basic | Basic | Advanced |
+| **Testing Support** | Manual | Manual | Built-in |
+| **Plugin System** | None | None | Extensive |
 
 ### When to Use Each
 
 #### Choose argparse when:
 - Building complex CLI applications
 - Need extensive validation and error handling
-- Require subcommands and argument groups
-- Want maximum flexibility and control
-- Prefer explicit over implicit
+- Want to minimize dependencies (built-in)
+- Require maximum flexibility and control
+- Working with legacy Python code
 
 #### Choose docopt when:
 - Building simple to medium CLI tools
@@ -754,6 +853,15 @@ Examples:
 - Prefer declarative over imperative
 - Documentation-driven development approach
 - Rapid prototyping
+
+#### Choose Click when:
+- Building modern, user-friendly CLI applications
+- Want rich formatting and beautiful help pages
+- Need extensive testing capabilities
+- Require plugin systems and extensibility
+- Working with complex command hierarchies
+- Want type hint integration
+- Building distributable CLI packages
 
 ## Common CLI Patterns
 
@@ -835,7 +943,9 @@ def main():
 
 - [argparse Documentation](https://docs.python.org/3/library/argparse.html)
 - [docopt Documentation](http://docopt.org/)
-- [Click Framework](https://click.palletsprojects.com/) - Alternative CLI framework
+- [Click Documentation](https://click.palletsprojects.com/) - Modern CLI framework with rich features
+- [Rich-Click](https://github.com/ewels/rich-click) - Enhanced Click with rich formatting
 - [Typer](https://typer.tiangolo.com/) - Modern CLI framework based on type hints
 - [GNU/POSIX CLI Standards](https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html)
 - [Command Line Interface Guidelines](https://clig.dev/)
+- [Click Examples and Patterns](https://click.palletsprojects.com/en/8.1.x/complex/)
