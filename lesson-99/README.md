@@ -9,7 +9,7 @@ This lesson covers advanced Python techniques, idioms, and lesser-known features
   - [02. Walrus Operator - Assignment Expressions](#02-walrus-operator---assignment-expressions)
   - [03. Comprehensions - Elegant Data Processing](#03-comprehensions---elegant-data-processing)
   - [04. Del Statement - Advanced Object Deletion](#04-del-statement---advanced-object-deletion)
-  - [05. Python Naming Conventions and Special Features](#05-python-naming-conventions-and-special-features)
+  - [05. Python Underscore - Special Usage Patterns](#05-python-underscore---special-usage-patterns)
     - [Internal Attributes and Properties](#internal-attributes-and-properties)
     - [Name Conflict Resolution](#name-conflict-resolution)
     - [Name Mangling for Privacy](#name-mangling-for-privacy)
@@ -32,7 +32,7 @@ This lesson covers advanced Python techniques, idioms, and lesser-known features
     - [Ellipsis in Type Hints (`09/arbitrary.py`)](#ellipsis-in-type-hints-09arbitrarypy)
 - [How to Run Examples](#how-to-run-examples)
   - [Basic Pattern Examples](#basic-pattern-examples)
-  - [Naming Conventions and Special Features](#naming-conventions-and-special-features)
+  - [Python Underscore Usage](#python-underscore-usage)
   - [Unpacking Patterns](#unpacking-patterns)
   - [Advanced Control Flow](#advanced-control-flow)
   - [Data Structure Merging](#data-structure-merging)
@@ -47,7 +47,7 @@ This lesson covers advanced Python techniques, idioms, and lesser-known features
 - Understand walrus operator and assignment expressions
 - Learn comprehensive techniques and list comprehensions
 - Master unpacking and packing patterns
-- Understand Python's naming conventions and special methods
+- Understand Python's underscore special usage patterns
 - Learn advanced control flow patterns (for-else, try-except-else-finally)
 - Master dictionary and list merging techniques
 - Explore the ellipsis (`...`) operator and its applications
@@ -185,8 +185,10 @@ if __name__ == '__main__':
 - Difference between `del` and reassignment
 - Handling index shifting during multiple deletions
 
-### 05. Python Naming Conventions and Special Features
+### 05. Python Underscore - Special Usage Patterns
 **Files:** `05/internal.py`, `05/name_conflict.py`, `05/name_mangling.py`, `05/numeric_literals.py`, `05/special.py`, `05/underscore.py`, `05/REPL.md`
+
+Learn the various special uses of underscores (`_`) in Python, from naming conventions to functional patterns:
 
 #### Internal Attributes and Properties
 ```python
@@ -299,13 +301,13 @@ print("Third:", three)
 ```
 
 **Key Concepts:**
-- Single underscore `_` for internal use indication
-- Double underscore `__` for name mangling
-- Trailing underscore `_` to avoid keyword conflicts
-- Numeric literal separators for readability
-- Special methods `__init__`, `__len__`, `__getitem__`
-- Special attributes `__doc__`, `__name__`
-- REPL special variable `_` for last result
+- **Single underscore `_`**: Internal use indication and throwaway variables
+- **Double underscore `__`**: Name mangling for private attributes
+- **Trailing underscore `_`**: Avoid conflicts with Python keywords
+- **Numeric separators**: Underscore in large numbers for readability
+- **Special methods**: `__init__`, `__len__`, `__getitem__` for object protocols
+- **Special attributes**: `__doc__`, `__name__` for introspection
+- **REPL variable**: `_` stores the last expression result in interactive mode
 
 ### 06. Unpacking Patterns - Advanced Argument Handling
 **Files:** `06/unpack_args.py`, `06/unpack_return.py`
@@ -571,7 +573,7 @@ cd lesson-99/04
 python3 del.py
 ```
 
-### Naming Conventions and Special Features
+### Python Underscore Usage
 ```bash
 # Navigate to section 05
 cd lesson-99/05
@@ -659,7 +661,7 @@ True
 2. **Master walrus operator patterns**: Practice using `:=` in different contexts like loops, conditionals, and comprehensions
 3. **Build comprehensive data structures**: Create complex nested data using dictionary and list comprehensions
 4. **Explore unpacking patterns**: Practice advanced unpacking with `*args`, `**kwargs`, and mixed assignments
-5. **Implement naming conventions**: Create classes demonstrating proper use of `_`, `__`, and trailing underscores
+5. **Master underscore patterns**: Create classes demonstrating proper use of `_`, `__`, and trailing underscores in different contexts
 6. **Design flexible APIs**: Use ellipsis in function signatures for optional parameters with meaningful defaults
 7. **Apply control flow patterns**: Use for-else and try-except-else-finally in real problem-solving scenarios
 8. **Compare merging techniques**: Benchmark different approaches for merging lists and dictionaries
