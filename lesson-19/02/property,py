@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+
+# What is __init__ method? see objects (https://docs.python.org/3/reference/datamodel.html#basic-customization)
+
+class Animal():
+
+    def __init__(self, kind: str, name: str, legs: int):
+        '''
+        The first step when creating a new object
+        '''
+
+        self.__kind = kind
+        self._name = name
+
+    def hello(self):
+        print('My name is {}. I am {}.'.format(self._name, self.__kind))
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, new_name: str):
+        self._name = new_name
+
+if __name__ == '__main__':
+    dog = Animal('dog', 'Buddy', 4)
+    dog.hello()
+    print('Current name:', dog.name)
+    dog.name = 'Max'
+    print('New name:', dog.name)
+    dog.hello()

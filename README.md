@@ -40,7 +40,8 @@ Follow [Built-in Types](https://docs.python.org/3/library/stdtypes.html).
 | 16     | [Modeling][16]                         |
 | 17     | [Database][17]                         |
 | 18     | [Processes and Threading][18]          |
-| 19     | [API Development][19]                  |
+| 19     | [Decorator][19]                  |
+| 20     | [API Development][20]                  |
 | 99     | [Advanced and Lesser-Known Tricks][99] |
 
 [1]: <lesson-01/README.md>
@@ -62,4 +63,5 @@ Follow [Built-in Types](https://docs.python.org/3/library/stdtypes.html).
 [17]: <lesson-17/README.md>
 [18]: <lesson-18/README.md>
 [19]: <lesson-19/README.md>
+[20]: <lesson-20/README.md>
 [99]: <lesson-99/README.md>
