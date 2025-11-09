@@ -1,0 +1,3 @@
+jmespath
+pydantic
+aws-lambda-powertools[tracer]

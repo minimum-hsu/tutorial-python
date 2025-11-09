@@ -1,0 +1,6 @@
+[tool.pytest.ini_options]
+log_cli = false
+log_cli_level = "INFO"
+minversion = "8.4"
+pythonpath = ["src"]
+testpaths = ["tests"]
