@@ -15,6 +15,7 @@ This lesson covers Python functions, modules, and the concept of the main entry 
   - [08. Documentation Strings (Docstrings)](#08-documentation-strings-docstrings)
   - [09. Inner Functions (Nested Functions)](#09-inner-functions-nested-functions)
   - [10. Functional Programming with pandas](#10-functional-programming-with-pandas)
+  - [11. Generators and yield](#11-generators-and-yield)
 - [How to Run](#how-to-run)
 - [Practice Suggestions](#practice-suggestions)
 - [Related Resources](#related-resources)
@@ -32,6 +33,7 @@ This lesson covers Python functions, modules, and the concept of the main entry 
 - Learn to document functions with docstrings
 - Master inner functions and closures
 - Understand functional programming concepts
+- Learn about generators and the yield keyword
 
 ## Course Content
 
@@ -137,22 +139,32 @@ if __name__ == '__main__':
 ```python
 #!/usr/bin/env python3
 
-# Arbitrary positional arguments
+# Function that accepts arbitrary number of positional arguments
 def print_multiply(*args):
     result = 1
     for num in args:
         result *= num
     print(result)
 
-# Arbitrary keyword arguments
+# Function that accepts arbitrary number of keyword arguments
 def print_args(**kwargs):
     for key, value in kwargs.items():
         print(f"{key}: {value}")
 
-# Combined arbitrary arguments
+# Function that accepts arbitrary number of positional arguments and keyword arguments
 def combined_example(*args, **kwargs):
     print("Positional arguments:", args)
     print("Keyword arguments:", kwargs)
+
+if __name__ == '__main__':
+    # Using arbitrary positional arguments
+    print_multiply(1, 2, 3)  # Output: 6
+
+    # Using arbitrary keyword arguments
+    print_args(name='Alice', age=30, city='New York')
+
+    # Using both arbitrary positional and keyword arguments
+    combined_example(1, 2, 3, name='Bob', age=25)
 ```
 
 **Positional and Keyword Arguments (`04/positional_and_keyword.py`)**
@@ -162,9 +174,23 @@ def combined_example(*args, **kwargs):
 def hello(greeting, name, title):
     print(greeting, title, name)
 
-# Special parameters: '/' for positional-only, '*' for keyword-only
+# Special parameters: '/' indicates positional-only parameters, '*' indicates keyword-only parameters
 def hi(greeting, /, name, *, title):
     print(greeting, title, name)
+
+if __name__ == '__main__':
+    # Positional arguments
+    hello('Hello,', 'Alice', 'Ms.')
+
+    # Keyword arguments
+    hello(greeting='Hello,', name='Bob', title='Mr.')
+
+    # Mixed positional and keyword arguments
+    hello('Hello', title='Dr.', name='Charlie')
+
+    # Using special parameters
+    hi('Hi,', 'Alice', title='Ms.')
+    hi('Hi,', name='Bob', title='Mr.')
 ```
 
 **Key Concepts:**
@@ -457,6 +483,63 @@ if __name__ == '__main__':
 - Method chaining for readable data pipelines
 - External dependencies management with `requirements.txt`
 
+### 11. Generators and yield
+**Files:** `11/yield.py`, `11/yield_from.py`
+
+Learn about generators and the yield keyword for creating iterators:
+
+**Basic Generator with yield (`11/yield.py`)**
+```python
+#!/usr/bin/env python3
+
+from typing import Iterator
+
+def iter_squares(n: int) -> Iterator[int]:
+    for i in range(n):
+        print(f"Generating square for {i}")
+        yield i * i
+        print(f"Yielded square for {i}")
+
+def list_squares(n) -> list[int]:
+    return [i * i for i in range(n)]
+    print("This line will never be executed")
+
+if __name__ == "__main__":
+    print("Using list_squares:")
+    for square in list_squares(10):
+        print(square)
+
+    print("\nUsing iter_squares:")
+    for square in iter_squares(10):
+        print(square)
+```
+
+**Generator with yield from (`11/yield_from.py`)**
+```python
+#!/usr/bin/env python3
+
+def iter_squares(n: int):
+    array = [i * i for i in range(n)]
+    yield from array
+
+if __name__ == "__main__":
+    print("Using iter_squares with yield from:")
+    for square in iter_squares(10):
+        print(square)
+```
+
+**Key Concepts:**
+- `yield` keyword for creating generator functions
+- Generators return iterators that produce values on-demand
+- Lazy evaluation: values are computed only when requested
+- Memory efficiency: generators don't store all values in memory
+- `yield from` for delegating to another generator or iterable
+- Generator state is preserved between yields
+- Generators implement the iterator protocol
+- Type hints with `Iterator[T]` for generator return types
+- Comparison between list comprehensions and generator expressions
+- Generator functions vs regular functions with return statements
+
 ## How to Run
 
 Each example can be executed directly:
@@ -521,6 +604,12 @@ pip install -r requirements.txt
 python3 funtional_programming.py
 ```
 
+```bash
+cd lesson-02/11
+python3 yield.py
+python3 yield_from.py
+```
+
 ## Practice Suggestions
 
 1. **Module Experiments**: Try importing the modules in different ways and observe the `__name__` variable
@@ -528,9 +617,12 @@ python3 funtional_programming.py
 3. **Type Hints**: Add type hints to your functions and use a type checker like mypy
 4. **Unpacking Practice**: Practice unpacking different data structures as function arguments
 5. **Lambda Usage**: Convert simple functions to lambda expressions and vice versa
-6. **Documentation Practice**: Write comprehensive docstrings for all your functions following Google or NumPy style
-7. **Inner Functions**: Create functions with multiple inner functions for complex data processing
-8. **Functional Programming**: Practice chaining operations and creating pure functions with data processing libraries
+7. **Documentation Practice**: Write comprehensive docstrings for all your functions following Google or NumPy style
+8. **Inner Functions**: Create functions with multiple inner functions for complex data processing
+9. **Functional Programming**: Practice chaining operations and creating pure functions with data processing libraries
+10. **Generator Practice**: Create custom generators for different use cases (fibonacci sequence, file processing, etc.)
+11. **Memory Efficiency**: Compare memory usage between list comprehensions and generator expressions
+12. **yield from Usage**: Practice using `yield from` to compose generators and delegate iteration
 
 ## Related Resources
 
@@ -539,3 +631,6 @@ python3 funtional_programming.py
 - [PEP 484 - Type Hints](https://www.python.org/dev/peps/pep-0484/)
 - [Python Glossary - Parameter vs Argument](https://docs.python.org/3/glossary.html#term-parameter)
 - [Special Parameters Documentation](https://docs.python.org/3/tutorial/controlflow.html#special-parameters)
+- [Generator Expressions](https://docs.python.org/3/reference/expressions.html#generator-expressions)
+- [PEP 255 - Simple Generators](https://www.python.org/dev/peps/pep-0255/)
+- [yield from Documentation](https://docs.python.org/3/reference/expressions.html#yield-expressions)
