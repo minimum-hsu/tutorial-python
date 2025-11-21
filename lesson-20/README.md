@@ -346,6 +346,7 @@ djangorestframework
 gunicorn
 ```
 
+
 **Key Concepts:**
 - Django's Model-View-Template (MVT) architecture
 - Object-Relational Mapping (ORM) with models
@@ -354,6 +355,57 @@ gunicorn
 - Built-in admin interface
 - Comprehensive ecosystem and middleware
 - Security features (CSRF, authentication, etc.)
+
+### 06. AWS Lambda Powertools (FastAPI-like, Serverless)
+**Files:** `06/src/api.py`, `06/src/model.py`, `06/src/utils.py`, `06/tests/test_api.py`, `06/requirements.txt`, `06/pyproject.toml`
+
+Learn how to build serverless RESTful APIs using AWS Lambda Powertools, Pydantic, and FastAPI-like patterns:
+
+**API Example (`06/src/api.py`)**
+```python
+from aws_lambda_powertools.event_handler import APIGatewayRestResolver
+from model import User, Users
+
+app = APIGatewayRestResolver(enable_validation=True)
+
+@app.get("/api/users")
+def list_users(offset: int = 0, limit: int = 100):
+    users = _list_users()
+    sub_users = Users(users[offset:offset + limit])
+    return sub_users
+
+@app.get("/api/users/<user_id>")
+def get_user(user_id: int):
+    user = _get_user(user_id)
+    return user
+
+@app.route("/api/users", method=["POST"])
+def add_user(user_id: int, name: str, email: str):
+    user = User(id=user_id, name=name, email=email)
+    return user
+```
+
+**Model Example (`06/src/model.py`)**
+```python
+from pydantic import BaseModel
+
+class User(BaseModel):
+    id: int
+    name: str
+    email: str
+
+class Users(BaseModel):
+    users: list[User]
+```
+
+**Key Concepts:**
+- Serverless API development with AWS Lambda
+- FastAPI-like route and parameter validation
+- Pydantic models for data validation and serialization
+- OpenAPI/Swagger integration for API documentation
+- Automated testing with pytest
+- Environment-based feature toggling
+- Error handling and logging with Powertools
 
 ## How to Run Examples
 
@@ -430,7 +482,21 @@ python manage.py runserver
 # Or run with Gunicorn
 gunicorn myproject.wsgi:application
 
+
 # Access at http://localhost:8000
+```
+
+### 06. AWS Lambda Powertools (FastAPI-like)
+```bash
+cd lesson-20/06
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+# Run tests
+pytest
+
+# Deploy to AWS Lambda (see AWS documentation)
 ```
 
 ## API Testing Examples
@@ -741,6 +807,10 @@ def get_users():
 8. **Rate Limiting**: Add request rate limiting
 9. **File Upload**: Implement file upload endpoints
 10. **Pagination**: Add pagination for large datasets
+11. **Serverless API**: Deploy your API to AWS Lambda using Powertools
+12. **Pydantic Validation**: Add custom validation logic to your models
+13. **OpenAPI Docs**: Enable Swagger/OpenAPI documentation for your Lambda API
+14. **Feature Flags**: Use environment variables to toggle features in your API
 
 ## Related Resources
 
