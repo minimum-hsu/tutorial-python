@@ -8,13 +8,14 @@ This lesson covers Python's loop structures, including for loops, while loops, l
   - [01. For Loops](#01-for-loops)
   - [02. While Loops](#02-while-loops)
   - [03. Loop Control Statements](#03-loop-control-statements)
+  - [03. Nested Loops](#03-nested-loops)
   - [04. List Comprehensions](#04-list-comprehensions)
+  - [05. Iteration Patterns](#05-iteration-patterns)
 - [Loop Comparison](#loop-comparison)
 - [How to Run](#how-to-run)
 - [Practice Suggestions](#practice-suggestions)
 - [Performance Tips](#performance-tips)
 - [Advanced Topics to Explore](#advanced-topics-to-explore)
-- [Related Resources](#related-resources)
 <!-- /TOC -->
 
 ## Learning Objectives
@@ -25,6 +26,8 @@ This lesson covers Python's loop structures, including for loops, while loops, l
 - Master loop control with break and continue
 - Understand list comprehensions for concise data processing
 - Compare different iteration approaches
+- Master nested loops for multi-dimensional data
+- Understand Python iterators and the iterator protocol
 
 ## Course Content
 
@@ -127,6 +130,27 @@ for number in range(0, 10):
 - Modulo operator `%` for checking even/odd numbers
 - `in` operator for membership testing
 
+### 03. Nested Loops
+**Files:** `01/nested_for.py`, `03/nested_for.py`
+
+Learn about nested loops for multi-dimensional iteration and more complex logic:
+
+**Nested For Loop (`03/nested_for.py`)**
+```python
+#!/usr/bin/env python3
+
+for i in range(1, 4):
+    for j in range(1, 4):
+        print(f"i={i}, j={j}, i*j={i*j}")
+```
+
+**Key Concepts:**
+- Multiple levels of iteration
+- Use cases: matrix operations, grid traversal, combinatorial problems
+- Performance considerations with deep nesting
+- Readability and maintainability of nested loops
+- Refactoring nested loops into functions
+
 ### 04. List Comprehensions
 **File:** `04/list_comprehension.py`
 
@@ -157,6 +181,38 @@ if __name__ == '__main__':
 - More concise than traditional for loops
 - Functional programming approach
 
+### 05. Iteration Patterns
+**File:** `05/iteration.py`
+
+Learn about common iteration patterns in Python, such as using for loops with range, and recursive iteration (遞迴):
+
+```python
+#!/usr/bin/env python3
+
+def fibonacci(n: int) -> int:
+    if n < 0:
+        raise ValueError("Input must be a non-negative integer.")
+    elif n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+if __name__ == "__main__":
+    for i in range(10):
+pairs = [(1, 'a'), (2, 'b'), (3, 'c')]
+for number, letter in pairs:
+    print(f"Number: {number}, Letter: {letter}")
+```
+
+**Key Concepts:**
+- `enumerate()` for index-value pairs
+- `zip()` for parallel iteration
+- Tuple unpacking in loops
+- Combining multiple sequences
+- Readable and Pythonic iteration patterns
+
 ## Loop Comparison
 
 | Loop Type | Best For | Use Cases | Pros | Cons |
@@ -164,6 +220,7 @@ if __name__ == '__main__':
 | **for** | Known iterations | Lists, ranges, sequences | Clean, readable | Less flexible for complex conditions |
 | **while** | Condition-based | Unknown iterations, events | Flexible conditions | Risk of infinite loops |
 | **List Comprehension** | Data transformation | Creating new lists | Concise, efficient | Can be less readable for complex logic |
+| **Iterator** | Custom iteration | Large data sets, streams | Memory-efficient, flexible | More complex syntax, overhead of object creation |
 
 ## How to Run
 
@@ -192,6 +249,11 @@ cd lesson-04/04
 python3 list_comprehension.py
 ```
 
+```bash
+cd lesson-04/05
+python3 iteration.py
+```
+
 ## Practice Suggestions
 
 1. **For Loop Variations**:
@@ -214,12 +276,18 @@ python3 list_comprehension.py
    - Create dictionary and set comprehensions
    - Combine multiple conditions in comprehensions
 
+5. **Iterator Exercises**:
+   - Create custom iterators for range-like functionality
+   - Implement iterators for data processing pipelines
+   - Explore built-in iterators and their use cases
+
 ## Performance Tips
 
 - **List Comprehensions** are generally faster than equivalent for loops
 - **Generator Expressions** `(expression for item in iterable)` are memory-efficient for large datasets
 - **Built-in Functions** like `map()`, `filter()` can be alternatives to list comprehensions
 - **Early Termination** with break can improve performance in search operations
+- **Iterators** reduce memory overhead when working with large data sets or streams
 
 ## Advanced Topics to Explore
 
@@ -228,11 +296,4 @@ python3 list_comprehension.py
 - **Nested Comprehensions**: Multi-dimensional data processing
 - **enumerate() and zip()**: Advanced iteration techniques
 - **else Clauses**: Using else with for and while loops
-
-## Related Resources
-
-- [Python For Loops Documentation](https://docs.python.org/3/tutorial/controlflow.html#for-statements)
-- [Python While Loops Documentation](https://docs.python.org/3/reference/compound_stmts.html#the-while-statement)
-- [List Comprehensions Documentation](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
-- [Built-in Functions Documentation](https://docs.python.org/3/library/functions.html)
-- [PEP 202 - List Comprehensions](https://www.python.org/dev/peps/pep-0202/)
+- **Performance comparison**: Iterators vs. for/while loops
