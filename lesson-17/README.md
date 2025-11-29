@@ -395,9 +395,8 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 # Set environment variables (or edit .env)
-export INFLUXDB_URL=http://localhost:8086
+export INFLUXDB_URL=http://localhost:8181
 export INFLUXDB_TOKEN=your_token
-export INFLUXDB_ORG=your_org
 export INFLUXDB_BUCKET=your_bucket
 
 # Write data
@@ -641,9 +640,8 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 # Set environment variables (or edit .env)
-export INFLUXDB_URL=http://localhost:8086
+export INFLUXDB_URL=http://localhost:8181
 export INFLUXDB_TOKEN=your_token
-export INFLUXDB_ORG=your_org
 export INFLUXDB_BUCKET=your_bucket
 
 # Write data
