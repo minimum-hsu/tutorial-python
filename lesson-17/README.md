@@ -9,6 +9,7 @@ This lesson covers comprehensive database operations in Python, from basic SQLit
   - [02. SQLAlchemy ORM with SQLite](#02-sqlalchemy-orm-with-sqlite)
   - [03. SQLAlchemy with MySQL and Docker](#03-sqlalchemy-with-mysql-and-docker)
   - [04. DynamoDB with PynamoDB](#04-dynamodb-with-pynamodb)
+  - [05. InfluxDB Time Series Operations](#05-influxdb-time-series-operations)
 - [Database Technology Comparison](#database-technology-comparison)
   - [Feature Comparison](#feature-comparison)
   - [When to Use Each](#when-to-use-each)
@@ -16,6 +17,7 @@ This lesson covers comprehensive database operations in Python, from basic SQLit
     - [Use SQLAlchemy + SQLite when:](#use-sqlalchemy--sqlite-when)
     - [Use SQLAlchemy + MySQL when:](#use-sqlalchemy--mysql-when)
     - [Use PynamoDB + DynamoDB when:](#use-pynamodb--dynamodb-when)
+    - [Use InfluxDB when:](#use-influxdb-when)
 - [Advanced Database Patterns](#advanced-database-patterns)
   - [Connection Pool Management](#connection-pool-management)
   - [Database Migrations](#database-migrations)
@@ -26,6 +28,7 @@ This lesson covers comprehensive database operations in Python, from basic SQLit
   - [SQLAlchemy + SQLite Example](#sqlalchemy--sqlite-example)
   - [SQLAlchemy + MySQL Example](#sqlalchemy--mysql-example)
   - [DynamoDB Example](#dynamodb-example)
+  - [InfluxDB Example](#influxdb-example)
 - [Database Best Practices](#database-best-practices)
   - [1. **Connection Management**](#1-connection-management)
   - [2. **Error Handling**](#2-error-handling)
@@ -367,20 +370,74 @@ if __name__ == '__main__':
 - Automatic table creation and management
 - Scalable cloud database solution
 
+### 05. InfluxDB Time Series Operations
+**Files:** `05/query.py`, `05/write.py`, `05/requirements.txt`, `05/.env`, `05/docker-compose.yml`
+
+This section demonstrates how to use InfluxDB, a popular time series database, with Python. You will learn how to write and query time series data, set up InfluxDB using Docker, and manage credentials securely.
+
+**Key Concepts:**
+- Time series data modeling and storage
+- Using the official InfluxDB Python client
+- Writing and querying data points
+- Environment variable management for credentials
+- Running InfluxDB locally with Docker Compose
+
+**How to Run:**
+```bash
+cd lesson-17/05
+
+# Start InfluxDB with Docker
+docker-compose up -d
+
+# Install requirements
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+# Set environment variables (or edit .env)
+export INFLUXDB_URL=http://localhost:8086
+export INFLUXDB_TOKEN=your_token
+export INFLUXDB_ORG=your_org
+export INFLUXDB_BUCKET=your_bucket
+
+# Write data
+python3 write.py
+
+# Query data
+python3 query.py
+
+# Stop InfluxDB container
+docker-compose down
+```
+
+**Typical Usage:**
+- Use `write.py` to insert time series data into InfluxDB.
+- Use `query.py` to retrieve and analyze time series data.
+- Store sensitive credentials in `.env` and load them in your scripts for security.
+
+**Best Practices:**
+- Always use environment variables or `.env` files for credentials.
+- Use Docker Compose for easy local database setup and teardown.
+- Batch writes for performance when inserting large volumes of data.
+
+**References:**
+- [InfluxDB Python Client Documentation](https://github.com/influxdata/influxdb-client-python)
+- [InfluxDB Official Documentation](https://docs.influxdata.com/influxdb/)
+
 ## Database Technology Comparison
 
 ### Feature Comparison
 
-| Feature | SQLite | SQLAlchemy + SQLite | SQLAlchemy + MySQL | PynamoDB + DynamoDB |
-|---------|--------|-------------------|-------------------|-------------------|
-| **Setup Complexity** | None | Low | Medium | Medium |
-| **Scalability** | Low | Low | High | Very High |
-| **ACID Compliance** | Yes | Yes | Yes | Limited |
-| **Schema Flexibility** | Rigid | Rigid | Rigid | Flexible |
-| **Query Complexity** | High | High | High | Limited |
-| **Cost** | Free | Free | Low | Pay-per-use |
-| **Cloud Native** | No | No | Depends | Yes |
-| **Learning Curve** | Low | Medium | Medium | Medium |
+| Feature | SQLite | SQLAlchemy + SQLite | SQLAlchemy + MySQL | PynamoDB + DynamoDB | InfluxDB |
+|---------|--------|-------------------|-------------------|-------------------|----------|
+| **Setup Complexity** | None | Low | Medium | Medium | Medium |
+| **Scalability** | Low | Low | High | Very High | High |
+| **ACID Compliance** | Yes | Yes | Yes | Limited | Yes |
+| **Schema Flexibility** | Rigid | Rigid | Rigid | Flexible | Flexible |
+| **Query Complexity** | High | High | High | Limited | Medium |
+| **Cost** | Free | Free | Low | Pay-per-use | Free |
+| **Cloud Native** | No | No | Depends | Yes | Yes |
+| **Learning Curve** | Low | Medium | Medium | Medium | Medium |
 
 ### When to Use Each
 
@@ -407,6 +464,12 @@ if __name__ == '__main__':
 - Need massive scalability
 - Flexible schema requirements
 - AWS ecosystem integration
+
+#### Use InfluxDB when:
+- Working with time series data
+- Need high write and query performance
+- Require downsampling and retention policies
+- Cloud-native monitoring and analytics
 
 ## Advanced Database Patterns
 
@@ -563,6 +626,34 @@ aws configure
 
 # Run the script
 python3 main.py
+```
+
+### InfluxDB Example
+```bash
+cd lesson-17/05
+
+# Start InfluxDB with Docker
+docker-compose up -d
+
+# Install requirements
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+# Set environment variables (or edit .env)
+export INFLUXDB_URL=http://localhost:8086
+export INFLUXDB_TOKEN=your_token
+export INFLUXDB_ORG=your_org
+export INFLUXDB_BUCKET=your_bucket
+
+# Write data
+python3 write.py
+
+# Query data
+python3 query.py
+
+# Stop InfluxDB container
+docker-compose down
 ```
 
 ## Database Best Practices
@@ -730,3 +821,4 @@ engine = create_engine(
 - [Amazon DynamoDB Documentation](https://docs.aws.amazon.com/dynamodb/)
 - [Database Design Principles](https://en.wikipedia.org/wiki/Database_design)
 - [Alembic Migrations](https://alembic.sqlalchemy.org/)
+- [InfluxDB Documentation](https://docs.influxdata.com/influxdb/)
