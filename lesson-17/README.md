@@ -420,8 +420,8 @@ docker-compose down
 - Batch writes for performance when inserting large volumes of data.
 
 **References:**
-- [InfluxDB Python Client Documentation](https://github.com/influxdata/influxdb-client-python)
-- [InfluxDB Official Documentation](https://docs.influxdata.com/influxdb/)
+- [InfluxDB Python Documentation](https://github.com/InfluxCommunity/influxdb3-python)
+- [InfluxDB Official Documentation](https://docs.influxdata.com/influxdb3/core/)
 
 ## Database Technology Comparison
 
@@ -819,4 +819,4 @@ engine = create_engine(
 - [Amazon DynamoDB Documentation](https://docs.aws.amazon.com/dynamodb/)
 - [Database Design Principles](https://en.wikipedia.org/wiki/Database_design)
 - [Alembic Migrations](https://alembic.sqlalchemy.org/)
-- [InfluxDB Documentation](https://docs.influxdata.com/influxdb/)
+- [InfluxDB Documentation](https://docs.influxdata.com/influxdb3/core/)
