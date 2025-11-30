@@ -4,12 +4,12 @@
 
 This example demonstrates how to use Python 3 and the influxdb3-python library with pandas to write and query data in InfluxDB 3.7. All connection parameters are loaded from a `.env` file.
 
-docker compose up -d
+docker-compose up -d
 
 ## Step 1: Start InfluxDB 3.7 (Official Docker)
 
 ```bash
-docker compose up -d
+docker-compose up -d
 ```
 - Default API port: 8181
 - Data directories are configured in docker-compose.yml
