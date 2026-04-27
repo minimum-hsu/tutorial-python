@@ -42,7 +42,8 @@ Follow [Built-in Types](https://docs.python.org/3/library/stdtypes.html).
 | 18     | [Processes and Threading][18]          |
 | 19     | [Decorator][19]                        |
 | 20     | [API Development][20]                  |
-| 21     | [Dynamic Function][21]           |
+| 21     | [Dynamic Function][21]                 |
+| 22     | [Caching][22]                          |
 | 99     | [Advanced and Lesser-Known Tricks][99] |
 
 [1]: <lesson-01/README.md>
@@ -66,4 +67,5 @@ Follow [Built-in Types](https://docs.python.org/3/library/stdtypes.html).
 [19]: <lesson-19/README.md>
 [20]: <lesson-20/README.md>
 [21]: <lesson-21/README.md>
+[22]: <lesson-22/README.md>
 [99]: <lesson-99/README.md>
