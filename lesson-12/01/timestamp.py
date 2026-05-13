@@ -6,7 +6,7 @@ def parse_timestamp(t):
             t,
             '%Y-%m-%dT%H:%M:%SZ'
         ).utctimetuple()
-    except:
+    except Exception:
         pass
 
     try:
@@ -14,7 +14,7 @@ def parse_timestamp(t):
             t,
             '%Y-%m-%dT%H:%M:%S.%fZ'
         ).utctimetuple()
-    except:
+    except Exception:
         pass
 
     try:
@@ -22,7 +22,7 @@ def parse_timestamp(t):
             t,
             '%Y-%m-%dT%H:%M:%S%z'
         ).utctimetuple()
-    except:
+    except Exception:
         pass
 
     try:
@@ -30,7 +30,7 @@ def parse_timestamp(t):
             t,
             '%Y-%m-%dT%H:%M:%S.%f%z'
         ).utctimetuple()
-    except:
+    except Exception:
         pass
 
     try:
@@ -38,7 +38,7 @@ def parse_timestamp(t):
             t,
             '%Y-%m-%dT%H:%M:%S'
         ).utctimetuple()
-    except:
+    except Exception:
         pass
 
     try:
@@ -46,7 +46,7 @@ def parse_timestamp(t):
             t,
             '%Y-%m-%dT%H:%M:%S.%f'
         ).utctimetuple()
-    except:
+    except Exception:
         pass
 
     try:
@@ -54,7 +54,7 @@ def parse_timestamp(t):
             t,
             '%Y-%m-%d %H:%M:%SZ'
         ).utctimetuple()
-    except:
+    except Exception:
         pass
 
     try:
@@ -62,7 +62,7 @@ def parse_timestamp(t):
             t,
             '%Y-%m-%d %H:%M:%S.%fZ'
         ).utctimetuple()
-    except:
+    except Exception:
         pass
 
     try:
@@ -70,7 +70,7 @@ def parse_timestamp(t):
             t,
             '%Y-%m-%d %H:%M:%S%z'
         ).utctimetuple()
-    except:
+    except Exception:
         pass
 
     try:
@@ -78,7 +78,7 @@ def parse_timestamp(t):
             t,
             '%Y-%m-%d %H:%M:%S.%f%z'
         ).utctimetuple()
-    except:
+    except Exception:
         pass
 
     try:
@@ -86,7 +86,7 @@ def parse_timestamp(t):
             t,
             '%Y-%m-%d %H:%M:%S'
         ).utctimetuple()
-    except:
+    except Exception:
         pass
 
     try:
@@ -94,7 +94,7 @@ def parse_timestamp(t):
             t,
             '%Y-%m-%d %H:%M:%S.%f'
         ).utctimetuple()
-    except:
+    except Exception:
         pass
 
     try:
@@ -102,7 +102,7 @@ def parse_timestamp(t):
             t,
             '%a %b %d %H:%M:%S %Z %Y'
         ).utctimetuple()
-    except:
+    except Exception:
         pass
 
     return None

@@ -24,7 +24,7 @@ def open_file(filename: str):
         print('Closing file...')
         try:
             f.close()
-        except NameError as e:
+        except NameError:
             # File was never opened
             pass
 

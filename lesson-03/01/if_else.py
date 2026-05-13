@@ -4,10 +4,10 @@ name = 'Alice'
 count = len(name)
 
 # Simple if-else statement
-if count is 5:  # same as "count == 5"
-    print('[1] size of', name, 'is 5')
+if count == 5:
+    print('[1] size of', name, '== 5')
 else:
-    print('[1] size of', name, 'is not 5')
+    print('[1] size of', name, '!= 5')
 
 # if-elif-else statement
 if count < 3:
