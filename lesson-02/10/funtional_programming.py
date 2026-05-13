@@ -27,7 +27,7 @@ def create_example() -> DataFrame:
     return DataFrame(data)
 
 def filter_age(df, min_age) -> DataFrame:
-    '''
+    """
     Filter rows where Age is greater than min_age.
 
     Args:
@@ -36,12 +36,12 @@ def filter_age(df, min_age) -> DataFrame:
 
     Returns:
         DataFrame: Filtered DataFrame.
-    '''
+    """
 
     return df[df["Age"] > min_age]
 
 def uppercase_city(df) -> DataFrame:
-    '''
+    """
     Convert the 'City' column to uppercase.
 
     Args:
@@ -49,14 +49,14 @@ def uppercase_city(df) -> DataFrame:
 
     Returns:
         DataFrame: DataFrame with 'City' column in uppercase.
-    '''
+    """
 
     _df = df.copy()
     _df["City"] = _df["City"].apply(lambda city: city.upper())
     return _df
 
 def add_age_flag(df) -> DataFrame:
-    '''
+    """
     Add a new column 'Age > 30' indicating if Age is greater than 30.
 
     Args:
@@ -64,7 +64,7 @@ def add_age_flag(df) -> DataFrame:
 
     Returns:
         DataFrame: DataFrame with new 'Age > 30' column.
-    '''
+    """
 
     _df = df.copy()
     _df["Age > 30"] = _df["Age"].apply(lambda age: age > 30)

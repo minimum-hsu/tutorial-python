@@ -3,11 +3,11 @@
 # Refer to https://docs.python.org/3/reference/datamodel.html#specialnames
 
 def foo():
-    '''function docstring'''
+    """function docstring"""
     pass
 
 class Bar:
-    '''sequence-like class'''
+    """sequence-like class"""
 
     def __init__(self):
         self.value = [0, 1, 2]

@@ -5,12 +5,12 @@ import shutil
 from tempfile import TemporaryDirectory
 
 def prepare_files(dir: str):
-    '''
+    """
     Prepare some files and folders in the given directory.
 
     Args:
         dir (str): The directory where files and folders will be created.
-    '''
+    """
 
     tempfolder = Path(dir)
     (tempfolder / "file1.txt").touch()
@@ -18,24 +18,24 @@ def prepare_files(dir: str):
     (tempfolder / "folder2" / "file2.txt").touch()
 
 def list_files(dir: str):
-    '''
+    """
     List all files and folders in the given directory.
 
     Args:
         dir (str): The directory to list files and folders from.
-    '''
+    """
 
     tempfolder = Path(dir)
     for path in tempfolder.rglob("*"):
         print(path)
 
 def remove_files(dir: str):
-    '''
+    """
     Remove all files and folders in the given directory.
 
     Args:
         dir (str): The directory to remove files and folders from.
-    '''
+    """
 
     shutil.rmtree(dir)
 

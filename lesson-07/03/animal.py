@@ -3,9 +3,9 @@
 class Animal():
 
     def __init__(self, kind: str, name: str, legs: int):
-        '''
+        """
         The first step when creating a new object
-        '''
+        """
 
         self.__kind = kind
         self.name = name

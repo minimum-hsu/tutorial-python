@@ -6,7 +6,7 @@ class MyClass:
 
     @property
     def value(self):
-        '''Public property to access the internal value.'''
+        """Public property to access the internal value."""
         return self._internal_value
 
 if __name__ == "__main__":

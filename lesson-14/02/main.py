@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-'''
+"""
 Usage:
     main.py [--file=<file>] [-v] [--number=<number>] <output>
 
@@ -14,7 +14,7 @@ options:
     -f, --file=<file>       Path to the input file.
     -v, --verbose           Enable verbose output.
     -n, --number=<number>   A number to process [default: 1].
-'''
+"""
 
 from docopt import docopt
 

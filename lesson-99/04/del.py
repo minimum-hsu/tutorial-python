@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
 def remove_element(array: list[str], element: str) -> list[str]:
-    '''Remove all occurrences of element from array.'''
+    """Remove all occurrences of element from array."""
 
     # Using list comprehension to create a new list without the specified element
     return [item for item in array if item != element]
 
 def del_element(array: list[str], element: str) -> list[str]:
-    '''Remove all occurrences of element from array using del statement.'''
+    """Remove all occurrences of element from array using del statement."""
 
     # Find all indices of the element to be removed
     indices_to_remove = [i for i, item in enumerate(array) if item == element]

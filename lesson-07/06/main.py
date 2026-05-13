@@ -2,9 +2,9 @@
 
 class Dog():
     def __init__(self, kind: str, name: str):
-        '''
+        """
         The first step when creating a new object
-        '''
+        """
 
         # Why is underscore used? see PEP 8 (https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles)
 
@@ -20,9 +20,9 @@ class Dog():
 
     @property
     def kind(self) -> str:
-        '''
+        """
         Getter for private attribute __kind
-        '''
+        """
 
         return self.__kind
 
