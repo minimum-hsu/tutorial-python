@@ -14,10 +14,10 @@ from docopt import docopt
 from animal.mammalia import Dog
 
 def main():
-    args = docopt(__doc__, version='0.1.0')
+    args = docopt(__doc__, version="0.1.0")
 
     # Use the parsed arguments
-    if args['dog']:
-        dog = Dog(name=args['--name'], kind=args['--kind'])
+    if args["dog"]:
+        dog = Dog(name=args["--name"], kind=args["--kind"])
         dog.hello()
         dog.run()

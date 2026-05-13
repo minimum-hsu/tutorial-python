@@ -57,7 +57,7 @@ def find_sevens_with_yield(matrix):
             if num % 7 == 0:
                 yield num
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print("Using break:")
     sevens = find_sevens_with_break(matrix)
     for i, num in enumerate(sevens, start=1):

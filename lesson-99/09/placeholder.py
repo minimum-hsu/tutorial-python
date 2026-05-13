@@ -10,7 +10,7 @@ class MyClass:
     def method_to_implement(self):
         ... # Placeholder for future implementation
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     function_to_implement()
     obj = MyClass()
     obj.method_to_implement()

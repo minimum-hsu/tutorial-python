@@ -8,7 +8,7 @@ while True:  # be careful, this loop is always run until break
     number = randint(0, 10)
 
     if number in match:
-        print(number, 'is matched')
+        print(number, "is matched")
         break
     else:
-        print(number, 'is not matched')
+        print(number, "is not matched")

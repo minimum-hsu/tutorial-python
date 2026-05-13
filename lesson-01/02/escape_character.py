@@ -2,10 +2,10 @@
 
 # see ASCII (https://www.asciitable.com)
 # new line
-print('hello\nworld')
+print("hello\nworld")
 
 # tab
-print('hello\tpython')
+print("hello\tpython")
 
 # vertical tab
-print('hello world', end='\v')
+print("hello world", end="\v")

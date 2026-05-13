@@ -9,6 +9,6 @@ class MyClass:
         '''Public property to access the internal value.'''
         return self._internal_value
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     obj = MyClass()
     print("Accessing internal value via property:", obj.value)

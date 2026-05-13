@@ -24,7 +24,7 @@ class Division(Operation):
 
         return a / b
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     operation = Multiplication()
     result = operation.calculate(6, 7)
-    print(f'The result of multiplication is: {result}')
+    print(f"The result of multiplication is: {result}")

@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 
 if __name__ == "__main__":
     # Create an SQLite database in memory
-    engine = create_engine('sqlite+pysqlite:///:memory:', echo=False)
+    engine = create_engine("sqlite+pysqlite:///:memory:", echo=False)
 
     # Create all tables defined in the model
     from model import Base
@@ -18,19 +18,19 @@ if __name__ == "__main__":
     with Session(engine) as session:
         # Create new User and Address instances
         alice = User(
-            name='alice',
+            name="alice",
             age=30,
-            addresses=[Address(email_address='alice@example.com')]
+            addresses=[Address(email_address="alice@example.com")]
         )
         bob = User(
-            name='bob',
+            name="bob",
             age=25,
-            addresses=[Address(email_address='bob@example.com')]
+            addresses=[Address(email_address="bob@example.com")]
         )
         charlie = User(
-            name='charlie',
+            name="charlie",
             age=35,
-            addresses=[Address(email_address='charlie@example.com')]
+            addresses=[Address(email_address="charlie@example.com")]
         )
 
         # Add the instances to the session and commit

@@ -3,24 +3,24 @@
 from datetime import datetime
 from datetime import timezone
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # current time in local
     t = datetime.now()
-    print('Local time')
+    print("Local time")
     print(t.timetuple())
     print(t)
 
     # current time in UTC
     utc = datetime.now(timezone.utc)
-    print('\nUTC time')
+    print("\nUTC time")
     print(utc.timetuple())  # same as t.utctimetuple()
     print(utc)
 
     # ISO 8601
-    print('\nISO 8601')
-    print(t.isoformat(timespec='seconds'))
-    print(t.isoformat(timespec='milliseconds'))
+    print("\nISO 8601")
+    print(t.isoformat(timespec="seconds"))
+    print(t.isoformat(timespec="milliseconds"))
 
     # unix time (epoch time)
-    print('\nUnix time')
+    print("\nUnix time")
     print(t.timestamp())

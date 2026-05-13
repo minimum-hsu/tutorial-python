@@ -6,17 +6,17 @@ from xml.dom.minidom import parse
 def parse_appledaily_news(file_: str):
     dom = parse(file_)
     root = dom.documentElement
-    items = [x for x in root.getElementsByTagName('channel')[0].childNodes \
-        if x.nodeType is root.ELEMENT_NODE and x.nodeName == 'item']
+    items = [x for x in root.getElementsByTagName("channel")[0].childNodes \
+        if x.nodeType is root.ELEMENT_NODE and x.nodeName == "item"]
 
     ###################################
     # sub function
     ###################################
     def parse_item(item):
         for node in item.childNodes:
-            if node.nodeName == 'title':
+            if node.nodeName == "title":
                 title = parse_title(node)
-            elif node.nodeName == 'link':
+            elif node.nodeName == "link":
                 link = parse_link(node)
         return title, link
 
@@ -35,7 +35,7 @@ def parse_appledaily_news(file_: str):
     news = [parse_item(item) for item in items]
     return news
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     workdir = Path(__file__).parent
-    news = parse_appledaily_news(str(workdir / 'news.xml'))
-    print(*news, sep = '\n')
+    news = parse_appledaily_news(str(workdir / "news.xml"))
+    print(*news, sep = "\n")

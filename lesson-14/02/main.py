@@ -18,12 +18,12 @@ options:
 
 from docopt import docopt
 
-if __name__ == '__main__':
-    args = docopt(__doc__, version='0.1.0')
+if __name__ == "__main__":
+    args = docopt(__doc__, version="0.1.0")
 
     # Use the parsed arguments
-    if args['--verbose']:
-        print('Verbose mode is ON.')
+    if args["--verbose"]:
+        print("Verbose mode is ON.")
         print(f'Input file: {args["--file"]}')
         print(f'Number: {args["--number"]}')
         print(f'Output file: {args["<output>"]}')

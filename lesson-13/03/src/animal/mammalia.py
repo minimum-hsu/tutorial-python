@@ -7,4 +7,4 @@ class Dog(Animal):
 
     @override
     def run(self):
-        print('I can run by {} legs'.format(self.legs))
+        print("I can run by {} legs".format(self.legs))

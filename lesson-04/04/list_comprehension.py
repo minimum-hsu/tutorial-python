@@ -3,7 +3,7 @@
 def double(number: int):
     return number * 2
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     array = range(0, 5)
     doubled = [double(number) for number in array] # List comprehension
     print(doubled) # Output: [0, 2, 4, 6, 8]

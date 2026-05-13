@@ -12,13 +12,13 @@ class Animal():
         self.legs = legs
 
     def hello(self):
-        print('My name is {}. I am {}.'.format(self.name, self.__kind))
+        print("My name is {}. I am {}.".format(self.name, self.__kind))
 
     def run(self):
-        print('no defined action')
+        print("no defined action")
 
     # see decorator (https://www.python.org/dev/peps/pep-0318/)
     # see classmethod (https://docs.python.org/3/library/functions.html#classmethod)
     @classmethod
     def info(cls):
-        print('This is Animal class.')
+        print("This is Animal class.")

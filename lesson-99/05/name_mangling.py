@@ -19,7 +19,7 @@ class Child(Parent):
         except AttributeError as e:
             print("Error:", e)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     parent = Parent()
     parent.show()
 

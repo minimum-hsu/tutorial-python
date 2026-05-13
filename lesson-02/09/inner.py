@@ -27,7 +27,7 @@ def format_text(text: str) -> str:
 
     return to_lower(trim(text))
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sample = "   Hello World!   "
     formatted = format_text(sample)
     print(f"Original: '{sample}'")

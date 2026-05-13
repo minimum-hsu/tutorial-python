@@ -9,15 +9,15 @@ from .serializers import UserSerializer
 from datetime import datetime
 
 def home(request):
-    return render(request, 'home.html', {'time': datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
+    return render(request, "home.html", {"time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
 
-@api_view(['GET'])
+@api_view(["GET"])
 def get_users(request):
     users = User.objects.all()
     serializer = UserSerializer(users, many=True)
     return Response(serializer.data)
 
-@api_view(['GET'])
+@api_view(["GET"])
 def get_user(request, user_id):
     try:
         user = User.objects.get(id=user_id)
@@ -26,7 +26,7 @@ def get_user(request, user_id):
     serializer = UserSerializer(user)
     return Response(serializer.data)
 
-@api_view(['POST'])
+@api_view(["POST"])
 def add_user(request):
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():

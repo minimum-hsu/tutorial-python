@@ -5,11 +5,11 @@ from main import Multiplication
 #############################
 # Fixtures
 #############################
-@pytest.fixture(scope='function')
+@pytest.fixture(scope="function")
 def multiplication():
     return Multiplication()
 
-@pytest.fixture(scope='function')
+@pytest.fixture(scope="function")
 def division():
     return Division()
 

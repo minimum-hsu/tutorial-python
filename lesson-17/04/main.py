@@ -5,7 +5,7 @@ from pynamodb.exceptions import DoesNotExist
 from pynamodb.exceptions import PutError
 from pynamodb.exceptions import TableError
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     try:
         # Create the table if it doesn't exist
         if not User.exists():
@@ -15,8 +15,8 @@ if __name__ == '__main__':
 
         # Create a new user
         user = User(
-            email='alice@example.com',
-            name='Alice',
+            email="alice@example.com",
+            name="Alice",
             age=30
         )
         user.save()
@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
         # Query the user back
         try:
-            retrieved_user = User.get('alice@example.com')
+            retrieved_user = User.get("alice@example.com")
             print(f"Retrieved user: {retrieved_user.name}, age: {retrieved_user.age}")
         except DoesNotExist:
             print("User not found")

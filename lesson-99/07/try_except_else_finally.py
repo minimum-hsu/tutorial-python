@@ -5,30 +5,30 @@ def divide(a, b):
     try:
         result = a / b
     except ZeroDivisionError:
-        print('Error: Division by zero!')
+        print("Error: Division by zero!")
     else:
-        print('Division successful, result is:', result)
+        print("Division successful, result is:", result)
     finally:
-        print('Execution of divide() is complete.')
+        print("Execution of divide() is complete.")
 
 def open_file(filename: str):
     # handle file operations with try-except-else-finally blocks
     try:
-        f = open(filename, 'r')
+        f = open(filename, "r")
     except FileNotFoundError:
-        print('Error: File not found!')
+        print("Error: File not found!")
     else:
         content = f.read()
-        print('File content:', content)
+        print("File content:", content)
     finally:
-        print('Closing file...')
+        print("Closing file...")
         try:
             f.close()
         except NameError:
             # File was never opened
             pass
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     divide(10, 2)
     divide(10, 0)
-    open_file('data.txt')
+    open_file("data.txt")

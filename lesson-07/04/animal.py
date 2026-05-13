@@ -15,8 +15,8 @@ class Animal(ABC):
         self.legs = legs
 
     def hello(self):
-        print('My name is {}. I am {}.'.format(self.name, self.__kind))
+        print("My name is {}. I am {}.".format(self.name, self.__kind))
 
     @abstractmethod
     def run(self):
-        raise NotImplementedError('Subclasses must implement abstract method')
+        raise NotImplementedError("Subclasses must implement abstract method")

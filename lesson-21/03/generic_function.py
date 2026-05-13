@@ -27,7 +27,7 @@ class Bird(Animal):
 #############################
 # Generic Function
 #############################
-T = TypeVar('T', bound=Animal)
+T = TypeVar("T", bound=Animal)
 
 # A generic function is one in which the types of the arguments and the return value have a defined relationship.
 def sort_by_legs(*animals: T) -> list[T]:
@@ -37,8 +37,8 @@ def sort_by_legs(*animals: T) -> list[T]:
 #############################
 # Main
 #############################
-if __name__ == '__main__':
-    dog = Dog(kind='Shiba', name='Maru')
-    bird = Bird(kind='Parrot', name='Polly')
+if __name__ == "__main__":
+    dog = Dog(kind="Shiba", name="Maru")
+    bird = Bird(kind="Parrot", name="Polly")
 
     print(sort_by_legs(dog, bird))

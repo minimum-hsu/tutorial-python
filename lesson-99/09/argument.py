@@ -10,7 +10,7 @@ def custom_random(start: Any = ..., end: Any = ...):
         end = 10
     return random.randint(start, end)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(custom_random())         # prints a random number between 0 and 10
     print(custom_random(start=5))  # prints a random number between 5 and 10
     print(custom_random(end=5))    # prints a random number between 0 and 5

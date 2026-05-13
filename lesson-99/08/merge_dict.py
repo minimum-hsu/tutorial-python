@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-map_a = {'a': 1, 'b': 2}
-map_b = {'b': 3, 'c': 4}
+map_a = {"a": 1, "b": 2}
+map_b = {"b": 3, "c": 4}
 
 # Merging two dictionaries using the unpacking operator **
 merged_map = {**map_a, **map_b}

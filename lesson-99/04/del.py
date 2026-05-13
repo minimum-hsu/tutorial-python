@@ -18,9 +18,9 @@ def del_element(array: list[str], element: str) -> list[str]:
         del array[index]
     return array
 
-if __name__ == '__main__':
-    sample_array = ['apple', 'banana', 'orange', 'banana', 'grape']
-    element_to_remove = 'banana'
+if __name__ == "__main__":
+    sample_array = ["apple", "banana", "orange", "banana", "grape"]
+    element_to_remove = "banana"
 
     print("Original array:", sample_array)
 

@@ -18,7 +18,7 @@ class Bar:
     def __len__(self):
         return len(self.value)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print("Function foo docstring:", foo.__doc__)
     print("Function foo name:", foo.__name__)
 

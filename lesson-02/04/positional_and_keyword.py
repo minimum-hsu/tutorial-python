@@ -8,17 +8,17 @@ def hello(greeting, name, title):
 def hi(greeting, /, name, *, title):
     print(greeting, title, name)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Positional arguments
-    hello('Hello,', 'Alice', 'Ms.')
+    hello("Hello,", "Alice", "Ms.")
 
     # Keyword arguments
-    hello(greeting='Hello,', name='Bob', title='Mr.')
+    hello(greeting="Hello,", name="Bob", title="Mr.")
 
     # Mixed positional and keyword arguments
     # Note: Positional arguments must come before keyword arguments
-    hello('Hello', title='Dr.', name='Charlie')
+    hello("Hello", title="Dr.", name="Charlie")
 
     # Using special parameters
-    hi('Hi,', 'Alice', title='Ms.')
-    hi('Hi,', name='Bob', title='Mr.')
+    hi("Hi,", "Alice", title="Ms.")
+    hi("Hi,", name="Bob", title="Mr.")

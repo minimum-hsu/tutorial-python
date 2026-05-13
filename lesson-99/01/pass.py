@@ -8,6 +8,6 @@ def foo():
 class MyException(Exception):
     pass
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     foo()
     raise MyException("This is a custom exception.")

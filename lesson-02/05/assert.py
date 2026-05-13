@@ -2,10 +2,10 @@
 
 def hello(name: str):
     assert isinstance(name, str)
-    print('hello', name)
+    print("hello", name)
 
-if __name__ == '__main__':
-    hello('Alice')
+if __name__ == "__main__":
+    hello("Alice")
 
     # raise an AssertionError when the type is incorrect
-    hello(['Bob'])
+    hello(["Bob"])

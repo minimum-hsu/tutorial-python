@@ -36,19 +36,19 @@ def hello(animal: Bird) -> str:
 
 def hello(animal: Dog | Bird) -> str:
     if isinstance(animal, Dog):
-        return 'My name is {}. I am {}, which is a breed of dog'.format(animal.name, animal.kind)
+        return "My name is {}. I am {}, which is a breed of dog".format(animal.name, animal.kind)
     elif isinstance(animal, Bird):
-        return 'My name is {}. I am {}, which is a species of bird'.format(animal.name, animal.kind)
+        return "My name is {}. I am {}, which is a species of bird".format(animal.name, animal.kind)
     else:
-        raise TypeError('Unsupported type')
+        raise TypeError("Unsupported type")
 
 
 #############################
 # Main
 #############################
-if __name__ == '__main__':
-    dog = Dog(kind='Shiba', name='Maru')
-    bird = Bird(kind='Parrot', name='Polly')
+if __name__ == "__main__":
+    dog = Dog(kind="Shiba", name="Maru")
+    bird = Bird(kind="Parrot", name="Polly")
 
     print(hello(dog))
     print(hello(bird))

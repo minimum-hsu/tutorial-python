@@ -20,9 +20,9 @@ def create_example() -> DataFrame:
     """
 
     data = {
-        'Name': ['Alice', 'Bob', 'Charlie'],
-        'Age': [25, 30, 35],
-        'City': ['New York', 'Los Angeles', 'Chicago']
+        "Name": ["Alice", "Bob", "Charlie"],
+        "Age": [25, 30, 35],
+        "City": ["New York", "Los Angeles", "Chicago"]
     }
     return DataFrame(data)
 
@@ -38,7 +38,7 @@ def filter_age(df, min_age) -> DataFrame:
         DataFrame: Filtered DataFrame.
     '''
 
-    return df[df['Age'] > min_age]
+    return df[df["Age"] > min_age]
 
 def uppercase_city(df) -> DataFrame:
     '''
@@ -52,7 +52,7 @@ def uppercase_city(df) -> DataFrame:
     '''
 
     _df = df.copy()
-    _df['City'] = _df['City'].apply(lambda city: city.upper())
+    _df["City"] = _df["City"].apply(lambda city: city.upper())
     return _df
 
 def add_age_flag(df) -> DataFrame:
@@ -67,10 +67,10 @@ def add_age_flag(df) -> DataFrame:
     '''
 
     _df = df.copy()
-    _df['Age > 30'] = _df['Age'].apply(lambda age: age > 30)
+    _df["Age > 30"] = _df["Age"].apply(lambda age: age > 30)
     return _df
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     df = create_example()
 
     # Using pipe to chain functions

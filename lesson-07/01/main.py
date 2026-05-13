@@ -13,13 +13,13 @@ class Dog():
         self.legs = 4
 
     def hello(self):
-        print('My name is {}. I am {}.'.format(self.name, self.__kind))
+        print("My name is {}. I am {}.".format(self.name, self.__kind))
 
     def run(self):
-        print('I can run by {} legs'.format(self.legs))
+        print("I can run by {} legs".format(self.legs))
 
 
-if __name__ == '__main__':
-    puppy = Dog(kind='Shiba', name='Maru')
+if __name__ == "__main__":
+    puppy = Dog(kind="Shiba", name="Maru")
     puppy.hello()
     puppy.run()

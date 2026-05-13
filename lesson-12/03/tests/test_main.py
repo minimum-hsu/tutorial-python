@@ -10,5 +10,5 @@ def test_multiply():
     assert multiply(0, 100) == 0
 
 def test_multiply_with_string():
-    with pytest.raises(TypeError, match='Both arguments must be integers'):
-        multiply(2, '3')
+    with pytest.raises(TypeError, match="Both arguments must be integers"):
+        multiply(2, "3")

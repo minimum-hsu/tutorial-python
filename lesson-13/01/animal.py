@@ -10,7 +10,7 @@ class Animal():
         self.legs = legs
 
     def hello(self):
-        print('My name is {}. I am {}.'.format(self.name, self.__kind))
+        print("My name is {}. I am {}.".format(self.name, self.__kind))
 
     def run(self):
-        print('no defined action')
+        print("no defined action")

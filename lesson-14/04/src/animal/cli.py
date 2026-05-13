@@ -18,12 +18,12 @@ def cli():
     pass
 
 @cli.command()
-@click.option('--name', required=True, help='Name of the dog.')
-@click.option('--kind', required=True, help='Kind/Breed of the dog.')
+@click.option("--name", required=True, help="Name of the dog.")
+@click.option("--kind", required=True, help="Kind/Breed of the dog.")
 def dog(name: str, kind: str):
     instance = Dog(name=name, kind=kind)
     instance.hello()
     instance.run()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     cli()

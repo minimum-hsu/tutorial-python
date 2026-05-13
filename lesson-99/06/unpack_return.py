@@ -2,9 +2,9 @@
 
 def get_array() -> list[str]:
     '''Return a sample array of strings.'''
-    return ['apple', 'banana', 'orange', 'banana', 'grape']
+    return ["apple", "banana", "orange", "banana", "grape"]
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     first, *middle, last = get_array()
     print("First element:", first)
     print("Middle elements:", middle)

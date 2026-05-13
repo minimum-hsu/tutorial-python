@@ -3,18 +3,18 @@
 import sys
 
 def throw_exception():
-    names = ['Alice', 'Bob', 'Charlie']
+    names = ["Alice", "Bob", "Charlie"]
 
     for i in range(4):
         print(names[i])
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     try:
         throw_exception()
     except IndexError as err:
-        print('[Error]', err, file=sys.stderr)
+        print("[Error]", err, file=sys.stderr)
     else:
         # not executed in this case
-        print('no exception launched')
+        print("no exception launched")
     finally:
-        print('finally block is always executed')
+        print("finally block is always executed")

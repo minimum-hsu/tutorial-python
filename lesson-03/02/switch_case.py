@@ -3,15 +3,15 @@
 from random import randint
 
 def get():
-    print('you get data from database')
+    print("you get data from database")
 
 
 def delete():
-    print('you delete data in database')
+    print("you delete data in database")
 
 
 def insert():
-    print('you insert data to database')
+    print("you insert data to database")
 
 
 action = {
@@ -21,6 +21,6 @@ action = {
 }
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     index = randint(0, 2)  # simulate user choice
     action[index]()

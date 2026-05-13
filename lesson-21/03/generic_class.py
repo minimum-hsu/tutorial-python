@@ -28,18 +28,18 @@ class Bird(Animal):
 #############################
 # Generic Class
 #############################
-T = TypeVar('T', bound=Animal)
+T = TypeVar("T", bound=Animal)
 
 
 class AnimalHandler(Generic[T]):
 
     def hello(self, animal: T):
         if isinstance(animal, Dog):
-            return 'My name is {}. I am {}, which is a breed of dog'.format(animal.name, animal.kind)
+            return "My name is {}. I am {}, which is a breed of dog".format(animal.name, animal.kind)
         elif isinstance(animal, Bird):
-            return 'My name is {}. I am {}, which is a species of bird'.format(animal.name, animal.kind)
+            return "My name is {}. I am {}, which is a species of bird".format(animal.name, animal.kind)
         else:
-            raise TypeError('Unsupported type')
+            raise TypeError("Unsupported type")
 
     def sort_by_legs(self, *animals: T) -> list[T]:
         return sorted(animals, key=lambda animal: animal.legs)
@@ -48,9 +48,9 @@ class AnimalHandler(Generic[T]):
 #############################
 # Main
 #############################
-if __name__ == '__main__':
-    dog = Dog(kind='Shiba', name='Maru')
-    bird = Bird(kind='Parrot', name='Polly')
+if __name__ == "__main__":
+    dog = Dog(kind="Shiba", name="Maru")
+    bird = Bird(kind="Parrot", name="Polly")
     handler = AnimalHandler[Animal]()
 
     print(handler.hello(dog))
