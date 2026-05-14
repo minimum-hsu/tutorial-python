@@ -36,6 +36,10 @@ class Dog():
         print("Initializing the Dog part.")
         self._initialized = True
 
+    @classmethod
+    def _instance_cache_clear(cls):
+        cls._instance_cache.clear()
+
 
 if __name__ == "__main__":
     print("Creating the first Dog instance.")

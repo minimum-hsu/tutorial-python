@@ -43,6 +43,10 @@ class Animal():
     def run(self):
         print("no defined action")
 
+    @classmethod
+    def _instance_cache_clear(cls):
+        cls._instance_cache.clear()
+
 
 class Dog(Animal):
 
