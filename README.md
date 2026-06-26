@@ -44,6 +44,7 @@ Follow [Built-in Types](https://docs.python.org/3/library/stdtypes.html).
 | 20     | [API Development][20]                  |
 | 21     | [Dynamic Function][21]                 |
 | 22     | [Caching][22]                          |
+| 23     | [Singleton Pattern][23]                |
 | 99     | [Advanced and Lesser-Known Tricks][99] |
 
 [1]: <lesson-01/README.md>
@@ -68,4 +69,5 @@ Follow [Built-in Types](https://docs.python.org/3/library/stdtypes.html).
 [20]: <lesson-20/README.md>
 [21]: <lesson-21/README.md>
 [22]: <lesson-22/README.md>
+[23]: <lesson-23/README.md>
 [99]: <lesson-99/README.md>
