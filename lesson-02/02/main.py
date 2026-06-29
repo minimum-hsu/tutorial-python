@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import second
+import second  # noqa: F401
 
 print("this is main.py. module name is", __name__)
 

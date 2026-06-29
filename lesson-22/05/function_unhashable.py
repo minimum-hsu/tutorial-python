@@ -1,0 +1,21 @@
+from cachetools import LRUCache
+from cachetools import cached
+import random
+from time import time
+
+call_count = {"count": 0}
+
+@cached(cache=LRUCache(maxsize=128), key=lambda *args, **kwargs: str(args) + str(kwargs))
+def choice(arr: list[int]) -> int:
+    """Randomly choose an element from the given list."""
+    call_count["count"] += 1
+    random.seed(time())
+    return random.choice(arr)
+
+if __name__ == "__main__":
+    arr = list(range(1, 10001))
+    number1 = choice(arr)
+    print(f"Generated number: {number1}")
+    number2 = choice(arr)
+    print(f"Generated number: {number2}")
+    print(f"Function was called {call_count['count']} times.")

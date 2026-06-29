@@ -33,15 +33,15 @@ def lru_cache[**P, R](func: Callable[P, R]) -> Callable[P, R]:
 call_count = {"count": 0}
 
 @lru_cache
-def generate_number() -> int:
-    """Generates a random number between 1 and 10000."""
+def generate_number(min: int, max: int) -> int:
+    """Generates a random number between min and max."""
     call_count["count"] += 1
     random.seed(time())
-    return random.randint(1, 10000)  # noqa:S311
+    return random.randint(min, max)  # noqa:S311
 
 if __name__ == "__main__":
-    number1 = generate_number()
+    number1 = generate_number(1, 10000)
     print(f"Generated number: {number1}")
-    number2 = generate_number()
+    number2 = generate_number(1, 10000)
     print(f"Generated number: {number2}")
     print(f"Function was called {call_count['count']} times.")

@@ -43,7 +43,7 @@ logger = Logger()
 #############################
 # Tracer
 #############################
-from aws_lambda_powertools import Tracer
+from aws_lambda_powertools import Tracer  # noqa: E402
 tracer = Tracer()
 
 

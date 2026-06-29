@@ -2,7 +2,7 @@
 
 A collection of Python tutorials for beginners.
 
-Python version: 3.12+
+Python version: 3.14+
 
 <!-- TOC -->
 - [Coding Style](#coding-style)

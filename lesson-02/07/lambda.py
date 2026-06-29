@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-function_double = lambda x: x * 2
+function_double = lambda x: x * 2  # noqa: E731
 
-function_multiply = lambda x, y: x * y
+function_multiply = lambda x, y: x * y  # noqa: E731
 
 if __name__ == "__main__":
     print("function_double(5) =", function_double(5)) # Output: 10
