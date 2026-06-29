@@ -23,19 +23,21 @@ This lesson covers advanced caching patterns in Python, focusing on the use of `
 - Master Python's built-in caching decorators: `@lru_cache` and `@cached_property`.
 - Recognize memory leak scenarios when directly applying `@lru_cache` on instance methods.
 - Implement safe caching for instance methods using `cachetools.cachedmethod`.
+- Apply type hints properly when dealing with decorators and caching libraries.
 - Control cache lifecycles and forcefully clear cached results.
 
 ## Course Content
 
 ### 01. Function Caching
-**File:** `01/function.py`
+**Files:** `01/function.py`, `01/function_typehint.py`
 
-Demonstrates how to use `functools.lru_cache` to cache the return value of a pure function.
+Demonstrates how to use `functools.lru_cache` to cache the return value of a pure function, and how to preserve type hints using `wrapt`.
 
 **Key Concepts:**
 - Basic caching with `@lru_cache`.
 - Performance tracking using a global `call_count` dictionary.
 - Understanding how identical calls retrieve cached results without executing the function body.
+- Using `wrapt.decorator` to build custom decorators that perfectly preserve docstrings, type hints, and function signatures.
 
 ---
 
@@ -54,7 +56,7 @@ Explores the dangers of using `lru_cache` directly on instance methods and how t
 ### 03. Class Method & Static Method Caching
 **Files:** `03/class_method.py`, `03/static_method.py`
 
-Shows how caching decorators interact with class-level methods. 
+Shows how caching decorators interact with class-level methods.
 
 **Key Concepts:**
 - Combining `@classmethod` with `@lru_cache` to cache operations operating on the class object (`cls`).
@@ -65,7 +67,9 @@ Shows how caching decorators interact with class-level methods.
 ### 01. Function Caching
 ```sh
 cd lesson-22/01
+pip install -r requirements.txt
 python3 function.py
+python3 function_typehint.py
 ```
 
 ### 02. Instance Method Caching
@@ -98,11 +102,10 @@ python3 static_method.py
 - Use the `timeit` module to benchmark the speed difference between a cached recursive function (like Fibonacci) and an uncached one.
 
 ## Common Pitfalls
-
-- **Memory Leaks:** Do not use `functools.lru_cache` on instance methods! It will lock the instance in memory for the lifetime of the program.
-- **Mutable Arguments:** `@lru_cache` requires all arguments (including kwargs) to be hashable. Passing lists or dicts will raise a `TypeError: unhashable type`.
+- Stacking `@lru_cache` with `@classmethod` historically caused issues in older Python versions; always place `@classmethod` as the outermost decorator (top).
+- Never use `@lru_cache` recursively on object methods if you create and destroy millions of short-lived objects. The global cache will prevent them from ever dying. Use `cachetools`!
 
 ## Related Resources
-
-- [Python functools documentation](https://docs.python.org/3/library/functools.html)
+- [functools — Higher-order functions and operations on callable objects](https://docs.python.org/3/library/functools.html)
 - [cachetools documentation](https://cachetools.readthedocs.io/en/latest/)
+- [wrapt documentation](https://wrapt.readthedocs.io/en/latest/)
