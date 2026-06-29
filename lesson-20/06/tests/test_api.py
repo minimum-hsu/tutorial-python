@@ -3,7 +3,6 @@ import json
 import jmespath
 from api import lambda_handler
 from api import _list_users
-from model import User
 from model import Users
 
 

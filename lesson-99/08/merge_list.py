@@ -17,6 +17,6 @@ merged_array.extend(array_b)
 print("Merged List using extend() method:", merged_array)
 
 # Merging two lists using itertools.chain
-import itertools
+import itertools  # noqa: E402
 merged_array = list(itertools.chain(array_a, array_b))
 print("Merged List using itertools.chain:", merged_array)

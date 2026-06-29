@@ -14,7 +14,7 @@ PATTERN_EMAIL = re.compile(r"^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\
 ##############################
 # Typing
 ##############################
-from typing import Annotated
+from typing import Annotated  # noqa: E402
 
 Email = Annotated[str, StringConstraints(
     strip_whitespace=True,
