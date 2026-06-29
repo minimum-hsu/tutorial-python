@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 This module demonstrates the use of the cachetools library to handle unhashable types in Python.
 """

@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 This module provides a typed version of the lru_cache decorator that preserves the original function's type hints.
 It also demonstrates the use of the cachetools library to handle unhashable types in Python.

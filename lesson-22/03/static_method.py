@@ -15,7 +15,7 @@ class NumberGenerator:
         """Generates a random number between 1 and 10000."""
         call_count["count"] += 1
         random.seed(time())
-        return random.randint(1, 10000)  # noqa:S311
+        return random.randint(1, 10000)
 
 if __name__ == "__main__":
     number1 = NumberGenerator.generate_number()

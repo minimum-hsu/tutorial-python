@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 This module provides a typed version of the lru_cache decorator that preserves the original function's type hints.
 """
@@ -41,7 +43,7 @@ def generate_number(min: int, max: int) -> int:
     """Generates a random number between min and max."""
     call_count["count"] += 1
     random.seed(time())
-    return random.randint(min, max)  # noqa:S311
+    return random.randint(min, max)
 
 if __name__ == "__main__":
     number1 = generate_number(1, 10000)
