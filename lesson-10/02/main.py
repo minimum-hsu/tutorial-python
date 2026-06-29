@@ -2,9 +2,9 @@
 
 
 
-#############################
+##############################
 # Logging
-#############################
+##############################
 import logging
 from logging import config
 from pathlib import Path
@@ -16,9 +16,9 @@ with open(workdir / "logging.conf") as f:
     config.dictConfig(conf)
 log = logging.getLogger("demo")
 
-#############################
+##############################
 # Main
-#############################
+##############################
 if __name__ == "__main__":
     log.debug("debug")  # This will not be shown due to log level
     log.info("info")

@@ -2,9 +2,9 @@ import pytest
 from main import Division
 from main import Multiplication
 
-#############################
+##############################
 # Fixtures
-#############################
+##############################
 @pytest.fixture(scope="function")
 def multiplication():
     return Multiplication()
@@ -13,9 +13,9 @@ def multiplication():
 def division():
     return Division()
 
-#############################
+##############################
 # Testcases
-#############################
+##############################
 def test_multiplication(multiplication):
     assert multiplication.calculate(3, 4) == 12
     assert multiplication.calculate(-2, 5) == -10

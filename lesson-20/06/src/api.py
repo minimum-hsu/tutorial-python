@@ -25,31 +25,31 @@ from model import Users
 from utils import is_feature_enabled
 
 
-#############################
+##############################
 # Typing
-#############################
+##############################
 from typing import Annotated
 from aws_lambda_powertools.utilities.typing import LambdaContext
 
 
-#############################
+##############################
 # Logging
-#############################
+##############################
 from aws_lambda_powertools import Logger
 from aws_lambda_powertools.logging import correlation_paths
 logger = Logger()
 
 
-#############################
+##############################
 # Tracer
-#############################
+##############################
 from aws_lambda_powertools import Tracer  # noqa: E402
 tracer = Tracer()
 
 
-#############################
+##############################
 # Main
-#############################
+##############################
 app = APIGatewayRestResolver(enable_validation=True, debug=is_feature_enabled("FEATURE_API_DEBUG"))
 if is_feature_enabled("FEATURE_SWAGGER"):
     app.enable_swagger(
@@ -81,9 +81,9 @@ def lambda_handler(event: dict, context: LambdaContext) -> dict:
     return app.resolve(event, context)
 
 
-#############################
+##############################
 # Routes
-#############################
+##############################
 @app.get("/api/users",
          summary="List all users",
          description="Get user IDs and names.",
@@ -180,9 +180,9 @@ def add_user(
     )
 
 
-#############################
+##############################
 # Error Handling
-#############################
+##############################
 @app.exception_handler([IndexError])
 def handle_not_found_account(e) -> Response:
     """
@@ -294,9 +294,9 @@ def handle_unexpected_error(e) -> Response:
     )
 
 
-#############################
+##############################
 # Functions
-#############################
+##############################
 @lru_cache
 def _list_users() -> list[User]:
     """List all users."""

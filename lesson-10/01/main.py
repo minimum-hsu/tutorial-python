@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-#############################
+##############################
 # Logging
-#############################
+##############################
 import logging
 logging.basicConfig(
     format = "%(asctime)s [%(levelname)s] %(message)s",
@@ -10,9 +10,9 @@ logging.basicConfig(
     level = logging.INFO
 )
 
-#############################
+##############################
 # Main
-#############################
+##############################
 if __name__ == "__main__":
     logging.debug("debug")  # This will not be shown due to log level
     logging.info("info")

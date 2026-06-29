@@ -3,9 +3,9 @@
 from dataclasses import dataclass
 from typing import overload
 
-#############################
+##############################
 # Classes
-#############################
+##############################
 @dataclass
 class Animal:
     kind: str
@@ -23,9 +23,9 @@ class Bird(Animal):
     legs: int = 2
 
 
-#############################
+##############################
 # Function Overloading
-#############################
+##############################
 @overload
 def hello(animal: Dog) -> str:
     ...
@@ -43,9 +43,9 @@ def hello(animal: Dog | Bird) -> str:
         raise TypeError("Unsupported type")
 
 
-#############################
+##############################
 # Main
-#############################
+##############################
 if __name__ == "__main__":
     dog = Dog(kind="Shiba", name="Maru")
     bird = Bird(kind="Parrot", name="Polly")

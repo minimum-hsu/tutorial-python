@@ -4,9 +4,9 @@ from dataclasses import dataclass
 from typing import TypeVar
 
 
-#############################
+##############################
 # Classes
-#############################
+##############################
 @dataclass
 class Animal:
     kind: str
@@ -24,9 +24,9 @@ class Bird(Animal):
     legs: int = 2
 
 
-#############################
+##############################
 # Generic Function
-#############################
+##############################
 T = TypeVar("T", bound=Animal)
 
 # A generic function is one in which the types of the arguments and the return value have a defined relationship.
@@ -34,9 +34,9 @@ def sort_by_legs(*animals: T) -> list[T]:
     return sorted(animals, key=lambda animal: animal.legs)
 
 
-#############################
+##############################
 # Main
-#############################
+##############################
 if __name__ == "__main__":
     dog = Dog(kind="Shiba", name="Maru")
     bird = Bird(kind="Parrot", name="Polly")

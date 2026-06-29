@@ -5,9 +5,9 @@ from typing import Generic
 from typing import TypeVar
 
 
-#############################
+##############################
 # Classes
-#############################
+##############################
 @dataclass
 class Animal:
     kind: str
@@ -25,9 +25,9 @@ class Bird(Animal):
     legs: int = 2
 
 
-#############################
+##############################
 # Generic Class
-#############################
+##############################
 T = TypeVar("T", bound=Animal)
 
 
@@ -45,9 +45,9 @@ class AnimalHandler(Generic[T]):
         return sorted(animals, key=lambda animal: animal.legs)
 
 
-#############################
+##############################
 # Main
-#############################
+##############################
 if __name__ == "__main__":
     dog = Dog(kind="Shiba", name="Maru")
     bird = Bird(kind="Parrot", name="Polly")

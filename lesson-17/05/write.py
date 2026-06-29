@@ -4,9 +4,9 @@ from influxdb_client_3 import Point
 from datetime import datetime
 from datetime import timezone
 
-#############################
+##############################
 # Environment Variables
-#############################
+##############################
 import os
 from dotenv import load_dotenv
 
@@ -16,9 +16,9 @@ TOKEN = os.getenv("INFLUXDB_TOKEN")
 DATABASE = os.getenv("INFLUXDB_DATABASE")
 
 
-#############################
+##############################
 # Functions
-#############################
+##############################
 def write_sensor_data(data):
     with InfluxDBClient3(host=INFLUXDB_URL, token=TOKEN, database=DATABASE) as client:
         point = Point("sensor_data") \
@@ -30,9 +30,9 @@ def write_sensor_data(data):
         print("Data written:", data)
 
 
-#############################
+##############################
 # Main
-#############################
+##############################
 if __name__ == "__main__":
     data = {
         "device": "sensor-01",

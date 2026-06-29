@@ -3,9 +3,9 @@ import pytest
 from main import lambda_handler
 
 
-#############################
+##############################
 # Fixtures
-#############################
+##############################
 @pytest.fixture(scope="function")
 def lambda_context():
     """
@@ -22,8 +22,8 @@ def lambda_context():
     return LambdaContext()
 
 
-#############################
+##############################
 # Testcases
-#############################
+##############################
 def test_lambda_handler(lambda_context):
     lambda_handler({}, lambda_context)

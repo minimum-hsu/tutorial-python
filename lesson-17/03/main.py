@@ -5,18 +5,18 @@ from model import Address
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
-#############################
+##############################
 # MySQL Database Settings
-#############################
+##############################
 USERNAME = "root"
 PASSWORD = "password123"
 HOST = "localhost"
 PORT = 3306
 DATABASE = "demo"
 
-#############################
+##############################
 # Main
-#############################
+##############################
 if __name__ == "__main__":
     # Create an MySQL database in memory
     engine = create_engine(f"mysql+pymysql://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}", echo=False)
