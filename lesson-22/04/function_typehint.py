@@ -1,3 +1,7 @@
+"""
+This module provides a typed version of the lru_cache decorator that preserves the original function's type hints.
+"""
+
 import functools
 import random
 from time import time

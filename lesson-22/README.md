@@ -6,12 +6,14 @@ This lesson covers advanced caching patterns in Python, focusing on the use of `
 - [Learning Objectives](#learning-objectives)
 - [Course Content](#course-content)
   - [01. Function Caching](#01-function-caching)
-  - [02. Instance Method Caching & Memory Leaks](#02-instance-method-caching--memory-leaks)
-  - [03. Class Method & Static Method Caching](#03-class-method--static-method-caching)
+  - [02. Instance Method Caching \& Memory Leaks](#02-instance-method-caching--memory-leaks)
+  - [03. Class Method \& Static Method Caching](#03-class-method--static-method-caching)
+  - [04. Advanced Function Caching](#04-advanced-function-caching)
 - [How to Run Examples](#how-to-run-examples)
   - [01. Function Caching](#01-function-caching-1)
   - [02. Instance Method Caching](#02-instance-method-caching)
-  - [03. Class & Static Methods](#03-class--static-methods)
+  - [03. Class \& Static Methods](#03-class--static-methods)
+  - [04. Advanced Function Caching](#04-advanced-function-caching-1)
 - [Practice Suggestions](#practice-suggestions)
 - [Common Pitfalls](#common-pitfalls)
 - [Related Resources](#related-resources)
@@ -29,15 +31,13 @@ This lesson covers advanced caching patterns in Python, focusing on the use of `
 ## Course Content
 
 ### 01. Function Caching
-**Files:** `01/function.py`, `01/function_typehint.py`
+**Files:** `01/function.py`
 
-Demonstrates how to use `functools.lru_cache` to cache the return value of a pure function, and how to preserve type hints using `wrapt`.
+Demonstrates how to use `functools.lru_cache` to cache the return value of a pure function.
 
 **Key Concepts:**
 - Basic caching with `@lru_cache`.
-- Performance tracking using a global `call_count` dictionary.
 - Understanding how identical calls retrieve cached results without executing the function body.
-- Using `wrapt.decorator` to build custom decorators that perfectly preserve docstrings, type hints, and function signatures.
 
 ---
 
@@ -62,14 +62,24 @@ Shows how caching decorators interact with class-level methods.
 - Combining `@classmethod` with `@lru_cache` to cache operations operating on the class object (`cls`).
 - Combining `@staticmethod` with `@lru_cache` for pure utility functions bounded to a class namespace.
 
+---
+
+### 04. Advanced Function Caching
+**Files:** `04/function_combined.py`, `04/function_typehint.py`, `04/function_unhashable.py`
+
+Covers advanced patterns like maintaining type hints with dynamic decorators and handling unhashable cache keys.
+
+**Key Concepts:**
+- **Type Hints Preservation:** `function_typehint.py` uses `wrapt.decorator` to build custom decorators that perfectly preserve docstrings, type hints, and function signatures.
+- **Unhashable Keys:** `function_unhashable.py` demonstrates using `cachetools.cached` and a custom key function to cache operations on unhashable types like `list`.
+- **Combined Approach:** `function_combined.py` implements a typed LRU cache combining `wrapt` features and `cachetools`' parameter flexibility.
+
 ## How to Run Examples
 
 ### 01. Function Caching
 ```sh
 cd lesson-22/01
-pip install -r requirements.txt
 python3 function.py
-python3 function_typehint.py
 ```
 
 ### 02. Instance Method Caching
@@ -93,6 +103,22 @@ python3 instance_property.py
 cd lesson-22/03
 python3 class_method.py
 python3 static_method.py
+```
+
+### 04. Advanced Function Caching
+```sh
+cd lesson-22/04
+# Install required dependencies
+pip install -r requirements.txt
+
+# Run type hint preservation example
+python3 function_typehint.py
+
+# Run unhashable keys example
+python3 function_unhashable.py
+
+# Run combined approach example
+python3 function_combined.py
 ```
 
 ## Practice Suggestions
